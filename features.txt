@@ -1,0 +1,71 @@
+Hálózati Jellemzők Magyarázata
+
+1. Subnetwork (Hálózat) szintű változók:
+   - Number_of_Nodes: Összes csúcs száma a hálózatban
+   - Number_of_Winners: Nyertes ajánlattevők száma
+   - Number_of_Buyers: Ajánlatkérők száma
+   - Number_of_Edges: Kapcsolatok száma a hálózatban
+   - Density: Hálózat sűrűsége (létező élek / lehetséges élek)
+   - Assortativity: Hasonló csúcsok kapcsolódási tendenciája
+
+2. Subgraph (Komponens) szintű változók:
+   - nodes: Csúcsok száma a komponensben
+   - edges: Élek száma a komponensben
+   - winners: Nyertesek száma a komponensben
+   - buyers: Kiírók száma a komponensben
+   - density: Komponens sűrűsége
+   - avg_path_length: Átlagos úthossz a komponensben
+   - diameter: Komponens átmérője (leghosszabb legrövidebb út)
+   - number_of_cliques: Klikkek száma a komponensben
+   - largest_clique_size: Legnagyobb klikk mérete
+   - k_core_number: Legnagyobb k érték, amelyre létezik k-mag
+
+3. Node (Csúcs) szintű változók:
+   a) Alapvető jellemzők:
+      - Node_ID: Csúcs azonosítója (szervezet neve)
+      - Winner_or_Buyer: Csúcs típusa (Nyertes/Kiíró)
+      - Number_of_edges: Csúcs fokszáma
+      - Clustering_Coefficient: Klaszterezési együttható
+
+   b) Centralitás mértékek:
+      - Degree_Centrality: Fokszám centralitás
+      - Betweenness_Centrality: Közöttiség centralitás
+      - Closeness_Centrality: Közelség centralitás
+      - Eigenvector_Centrality: Sajátvektor centralitás
+      - PageRank: PageRank érték
+
+   c) Beágyazás statisztikák:
+      - Embedding_Mean: Beágyazási vektor átlaga
+      - Embedding_Std: Beágyazási vektor szórása
+      - Embedding_Min: Beágyazási vektor minimuma
+      - Embedding_Max: Beágyazási vektor maximuma
+      - Embedding_L2_Norm: Beágyazási vektor L2 normája
+
+   d) Közösség jellemzők:
+      - Community: Közösség azonosító
+      - Community_Size: Közösség mérete
+
+   e) Hasonlósági mértékek:
+      - Avg_Similarity_To_Others: Átlagos hasonlóság más csúcsokhoz
+      - Max_Similarity_To_Others: Maximális hasonlóság más csúcsokhoz
+
+4. Csoportosítási kritériumok (minden statisztikához):
+   - Ajánlatkérő szervezet főtevékenysége
+   - Ajánlatkérő szervezet típusa
+   - Szerződés típusa
+   - Eljárásrend
+   - Minőségi kritérium alkalmazásra került
+   - Költség kritérium alkalmazásra került
+   - Ár kritérium alkalmazásra került
+
+Megjegyzések:
+- Minden statisztika időbélyeggel ellátott CSV fájlokban kerül mentésre
+- A node_stats.csv tartalmazza a legrészletesebb információkat
+- Az eredeti adathalmazhoz a node szintű statisztikák kerülnek hozzáfűzésre
+- A beágyazások és közösségek segíthetnek azonosítani hasonló viselkedésű szereplőket
+- A centralitás mértékek a szereplők fontosságát jelzik különböző szempontok szerint:
+  • A fokszám centralitás azt mutatja meg, hogy egy szereplő hány másik szereplővel áll kapcsolatban
+  • A közöttiség centralitás azt méri, hogy egy szereplő mennyire fontos közvetítő szerepet tölt be a hálózatban
+  • A közelség centralitás azt jelzi, hogy egy szereplő átlagosan milyen közel van a többi szereplőhöz
+  • A sajátvektor centralitás azt mutatja meg, hogy egy szereplő mennyire kapcsolódik más fontos szereplőkhöz
+  • A PageRank hasonló a sajátvektor centralitáshoz, de figyelembe veszi a kapcsolatok irányát is

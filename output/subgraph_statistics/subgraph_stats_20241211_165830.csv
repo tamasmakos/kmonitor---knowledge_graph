@@ -1,0 +1,59 @@
+nodes,edges,density,avg_degree,Ajánlatkérő szervezet főtevékenysége,Ajánlatkérő szervezet típusa,Szerződés típusa,Eljárásrend,Minőségi kritérium alkalmazásra került,Költség kritérium alkalmazásra került,Ár kritérium alkalmazásra került
+KL - Egyéb tevékenység:,N - Közjogi szervezet,Szolgáltatás megrendelés,Nemzeti eljárásrend,Igen,Nem,Igen,453,392,0.0019144738127332044,1.7306843267108167
+KL - Egyéb tevékenység:,N - Közjogi szervezet,Szolgáltatás megrendelés,Nemzeti eljárásrend,Nem,Nem,Igen,195,166,0.004388051810732223,1.7025641025641025
+KL - Egyéb tevékenység:,N - Közjogi szervezet,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,270,227,0.0031254302629767313,1.6814814814814816
+KL - Egyéb tevékenység:,N - Közjogi szervezet,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,256,244,0.003737745098039216,1.90625
+KL - Egyéb tevékenység:,N - Közjogi szervezet,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,653,560,0.0013153073591446744,1.7151607963246553
+KL - Egyéb tevékenység:,N - Regionális/helyi szintű,Szolgáltatás megrendelés,Nemzeti eljárásrend,Igen,Nem,Igen,250,194,0.003116465863453815,1.552
+KL - Egyéb tevékenység:,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,177,132,0.00423728813559322,1.4915254237288136
+KL - Egyéb tevékenység:,N - Regionális/helyi szintű,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,954,735,0.0008084367802437849,1.5408805031446542
+KL - Egyéb tevékenység:,U - Egyéb típus:,Szolgáltatás megrendelés,Nemzeti eljárásrend,Igen,Nem,Igen,351,264,0.002148962148962149,1.5042735042735043
+KL - Egyéb tevékenység:,U - Egyéb típus:,Szolgáltatás megrendelés,Uniós eljárásrend,Igen,Nem,Igen,501,411,0.0016407185628742515,1.6407185628742516
+KL - Egyéb tevékenység:,U - Egyéb típus:,Szolgáltatás megrendelés,Uniós eljárásrend,Nem,Nem,Igen,208,169,0.00392512077294686,1.625
+KL - Egyéb tevékenység:,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,349,274,0.00225603530612917,1.5702005730659025
+KL - Egyéb tevékenység:,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,266,233,0.003305433394807774,1.7518796992481203
+KL - Egyéb tevékenység:,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,681,643,0.001388528979873888,1.8883994126284875
+KL - Egyéb tevékenység:,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,584,626,0.0018386240278202026,2.143835616438356
+KL - Egyéb tevékenység:,U - Egyéb típus:,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,692,530,0.0011083877767832494,1.5317919075144508
+KL - Egyéb tevékenység:,U - Egyéb típus:,Építési beruházás,Uniós eljárásrend,Igen,Nem,Igen,250,171,0.0027469879518072287,1.368
+KL - Egyéb tevékenység:,U - Közjogi intézmény,Szolgáltatás megrendelés,Uniós eljárásrend,Igen,Nem,Igen,742,724,0.0013167897974253485,1.9514824797843666
+KL - Egyéb tevékenység:,U - Közjogi intézmény,Szolgáltatás megrendelés,Uniós eljárásrend,Nem,Nem,Igen,309,273,0.0028684907325684027,1.766990291262136
+KL - Egyéb tevékenység:,U - Közjogi intézmény,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,372,370,0.002680926296264093,1.989247311827957
+KL - Egyéb tevékenység:,U - Közjogi intézmény,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,422,428,0.002409068906125114,2.028436018957346
+KL - Egyéb tevékenység:,U - Közjogi intézmény,Építési beruházás,Uniós eljárásrend,Igen,Nem,Igen,280,304,0.0038914490527393753,2.1714285714285713
+KL - Egyéb tevékenység:,"U - Minisztériumi vagy egyéb nemzeti vagy szövetségi hatóság, valamint regionális vagy helyi részlegeik",Szolgáltatás megrendelés,Uniós eljárásrend,Nem,Nem,Igen,182,175,0.0053123671908202295,1.9230769230769231
+KL - Egyéb tevékenység:,U - Támogatott szervezet,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,790,688,0.001103784633649388,1.7417721518987341
+KL - Egyéb tevékenység:,U - Támogatott szervezet,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,746,459,0.0008258812098529967,1.230563002680965
+KL - Egészségügy,N - Közjogi szervezet,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,116,122,0.009145427286356821,2.103448275862069
+KL - Egészségügy,N - Közjogi szervezet,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,120,149,0.010434173669467786,2.4833333333333334
+KL - Egészségügy,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,78,85,0.014152514152514152,2.1794871794871793
+KL - Egészségügy,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,197,234,0.006060292137159432,2.3756345177664975
+KL - Egészségügy,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,240,367,0.006398186889818689,3.058333333333333
+KL - Egészségügy,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,354,546,0.004369328275795842,3.0847457627118646
+KL - Egészségügy,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,432,1028,0.005521182435335567,4.7592592592592595
+KL - Egészségügy,U - Közjogi intézmény,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,117,117,0.008620689655172414,2.0
+KL - Egészségügy,U - Közjogi intézmény,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,179,259,0.008128805473604922,2.893854748603352
+KL - Egészségügy,"U - Minisztériumi vagy egyéb nemzeti vagy szövetségi hatóság, valamint regionális vagy helyi részlegeik",Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,101,105,0.010396039603960397,2.0792079207920793
+KL - Egészségügy,U - Regionális vagy helyi hatóság,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,88,91,0.011886102403343783,2.0681818181818183
+KL - Oktatás,N - Regionális/helyi szintű,Szolgáltatás megrendelés,Nemzeti eljárásrend,Igen,Nem,Igen,136,125,0.006808278867102397,1.838235294117647
+KL - Oktatás,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,134,145,0.008136011670968465,2.1641791044776117
+KL - Oktatás,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,126,148,0.009396825396825396,2.3492063492063493
+KL - Oktatás,N - Regionális/helyi szintű,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,386,313,0.0021061839714689454,1.621761658031088
+KL - Oktatás,U - Egyéb típus:,Szolgáltatás megrendelés,Uniós eljárásrend,Igen,Nem,Igen,155,150,0.006284038542103058,1.935483870967742
+KL - Oktatás,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,244,296,0.0049922417864130065,2.4262295081967213
+KL - Oktatás,U - Egyéb típus:,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,200,213,0.005351758793969849,2.13
+KL - Oktatás,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,326,426,0.004020764511562058,2.6134969325153374
+KL - Oktatás,U - Egyéb típus:,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,427,580,0.0031885300876296025,2.7166276346604215
+KL - Oktatás,U - Egyéb típus:,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,223,182,0.0036763220619722863,1.6322869955156951
+KL - Oktatás,U - Közjogi intézmény,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,211,247,0.005574362446400361,2.3412322274881516
+"KL - Szabadidő, kultúra és vallás",U - Támogatott szervezet,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,388,276,0.0018380883880764005,1.422680412371134
+KL - Általános közszolgáltatások,N - Közjogi szervezet,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,209,158,0.0036345233713654767,1.5119617224880382
+KL - Általános közszolgáltatások,N - Regionális/helyi szintű,Szolgáltatás megrendelés,Nemzeti eljárásrend,Igen,Nem,Igen,1108,923,0.000752513541982592,1.6660649819494584
+KL - Általános közszolgáltatások,N - Regionális/helyi szintű,Szolgáltatás megrendelés,Nemzeti eljárásrend,Nem,Nem,Igen,166,105,0.0038335158817086527,1.2650602409638554
+KL - Általános közszolgáltatások,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Igen,Nem,Igen,657,579,0.001343412406726807,1.7625570776255708
+KL - Általános közszolgáltatások,N - Regionális/helyi szintű,Árubeszerzés,Nemzeti eljárásrend,Nem,Nem,Igen,376,381,0.002702127659574468,2.026595744680851
+KL - Általános közszolgáltatások,N - Regionális/helyi szintű,Építési beruházás,Nemzeti eljárásrend,Igen,Nem,Igen,4895,5841,0.0002438206838917638,2.386516853932584
+KL - Általános közszolgáltatások,U - Regionális vagy helyi hatóság,Szolgáltatás megrendelés,Uniós eljárásrend,Igen,Nem,Igen,237,191,0.003414860902524494,1.6118143459915613
+KL - Általános közszolgáltatások,U - Regionális vagy helyi hatóság,Árubeszerzés,Uniós eljárásrend,Igen,Nem,Igen,191,174,0.0047947092863047675,1.8219895287958114
+KL - Általános közszolgáltatások,U - Regionális vagy helyi hatóság,Árubeszerzés,Uniós eljárásrend,Nem,Nem,Igen,237,245,0.004380318958735608,2.067510548523207
+KL - Általános közszolgáltatások,U - Regionális vagy helyi hatóság,Építési beruházás,Uniós eljárásrend,Igen,Nem,Igen,236,202,0.0036422646952758743,1.7118644067796611

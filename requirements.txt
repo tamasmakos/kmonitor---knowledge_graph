@@ -1,0 +1,26 @@
+# Core data processing
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Network analysis
+networkx>=2.8.0
+node2vec>=0.4.0
+python-louvain>=0.16  # for community detection
+
+# Machine Learning
+scikit-learn>=1.0.0   # for PCA, cosine_similarity, etc.
+
+# Visualization
+pyvis>=0.3.0          # for network visualization
+
+# Entity Resolution
+recordlinkage>=0.14   # for entity matching
+python-Levenshtein>=0.21.0  # for string similarity
+
+# Progress and Utilities
+tqdm>=4.64.0          # for progress bars
+python-dateutil>=2.8.0  # for date handling
+pathlib              # for path handling (part of Python standard library)
+
+# Type Hints
+typing-extensions>=4.0.0  # for advanced type hints
