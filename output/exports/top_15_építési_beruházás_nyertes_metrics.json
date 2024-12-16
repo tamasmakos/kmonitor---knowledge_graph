@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_építési_beruházás_nyertes",
+  "nodes": 394,
+  "edges": 467,
+  "density": 0.0030159775771431523,
+  "avg_clustering": 0.0,
+  "number_of_communities": 12,
+  "avg_betweenness": 0.00933097306035988,
+  "avg_pagerank": 0.002538071065989847,
+  "avg_degree_centrality": 0.006031955154286306,
+  "avg_closeness_centrality": 0.0030159775771431523,
+  "avg_eigenvector_centrality": 0.00894662503835406,
+  "diameter": 10,
+  "avg_shortest_path": 4.6577414396610735,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": 0.018072733434116178
+}

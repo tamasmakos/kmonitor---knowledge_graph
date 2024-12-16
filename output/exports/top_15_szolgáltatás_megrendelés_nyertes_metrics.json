@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_szolgáltatás_megrendelés_nyertes",
+  "nodes": 202,
+  "edges": 261,
+  "density": 0.006428254765775085,
+  "avg_clustering": 0.0,
+  "number_of_communities": 11,
+  "avg_betweenness": 0.009072705778040492,
+  "avg_pagerank": 0.0049504950495049506,
+  "avg_degree_centrality": 0.01285650953155017,
+  "avg_closeness_centrality": 0.006428254765775085,
+  "avg_eigenvector_centrality": 0.01650558553932638,
+  "diameter": -1,
+  "avg_shortest_path": -1,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.022488987627576004
+}

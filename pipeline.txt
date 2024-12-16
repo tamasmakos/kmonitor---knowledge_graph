@@ -1,71 +1,66 @@
-Kijavított problémák
-- A vektor alapú névtisztítás helyett adószám alapján vonjuk össze az entitásokat
-- A cégnevek standardizálása nem szükséges
-- A "szerződés/rész végleges összértéke" oszlopot használjuk a "beszerzés végleges összértéke" helyett, mivel ez tartalmazza az odaítélt szerződés részeket - így használható vizualizációban és gráf alapú modellekben
-- A "Rész száma" oszlop az eljárás több részletét tartalmazza, így egy nyertes többször is szerepelhet - ezt egyelőre nem piszkáltuk
-- A több ajánlatkérős eseteket (pl.: "Állami Egészségügyi Ellátó Központ|Pécsi Tudományegyetem|Debreceni Egyetem") egyben hagyjuk, mivel így jobban tükrözi a valóságot, itt nincsenek alrészek.
-- Csak azokat a rekordokat tartjuk meg, ahol "Szerződés/rész odaítélésre került = Igen"
-- A "szerződés/rész végleges összértéke" oszlopból eltávolítottuk a hiányzó értékeket
+Adatfeldolgozási folyamat
 
-Hálózatelemzési folyamat
-1. Részgráfok létrehozása (create_subgraphs_by_criteria)
-   - Szűrés minőségi kritériumok alapján
-   - Csak odaítélt szerződések
-   - Csak HUF pénznemű szerződések
-   - Minimum 200 rekordot tartalmazó csoportok megtartása
-   - Csoportosítás az alábbi szempontok szerint:
-     • Ajánlatkérő szervezet főtevékenysége
-     • Ajánlatkérő szervezet típusa
-     • Szerződés típusa
-     • Eljárásrend
-     • Minőségi/Költség/Ár kritériumok
+1. Adattisztítás és előfeldolgozás
+   - Csak odaítélt szerződések megtartása
+   - Duplikátumok kezelése EKR azonosító alapján
+   - Legfrissebb rekordok megtartása időbélyeg alapján
+   - Hiányzó értékek kezelése
 
-2. Gráf statisztikák számítása (calculate_subgraph_statistics)
-   - Alapvető hálózati metrikák:
-     • Csúcsok száma (nyertesek, kiírók)
-     • Élek száma
-     • Hálózat sűrűsége
-     • Asszortativitás
-   - Komponens statisztikák:
-     • Átlagos úthossz
-     • Átmérő
-     • Klikkek száma
-     • Legnagyobb klikk mérete
-     • K-mag szám
+2. Hálózatelemzési szintek
+   a) Teljes hálózat elemzése:
+      - Teljes hálózat metrikák
+      - Kiírók hálózata
+      - Nyertesek hálózata
+      - Kombinált hálózat
 
-3. Node2Vec beágyazások készítése (create_node_embeddings)
-   - 64 dimenziós beágyazások
-   - Paraméterek:
-     • 30 lépéses séták
-     • 100 séta csúcsonként
-     • p=1, q=1 (kiegyensúlyozott feltárás)
-   - Kategorikus attribútumok one-hot kódolása
-   - Közösségdetektálás
+   b) Top 15 elemzések szerződéstípusonként:
+      - Árubeszerzés
+      - Szolgáltatás megrendelés
+      - Építési beruházás
+      Mindegyiknél:
+      - Top 15 kiíró
+      - Top 15 nyertes
 
-4. Beágyazás statisztikák számítása (calculate_embedding_statistics)
-   - Alapstatisztikák:
-     • Átlag, szórás, min, max értékek
-     • L2 norma
-     • Fokszám
-   - Közösség méretek
-   - Centralitás metrikák:
+   c) Értékhatár alapú elemzések:
+      - 800M+ építési beruházások (top 5 kiíró/nyertes)
+      - 300M alatti építési beruházások (top 5 kiíró/nyertes)
+      - 900M+ egyajánlatos szerződések (top 5 kiíró/nyertes)
+
+3. Hálózati metrikák számítása:
+   - Alapmetrikák:
+     • Csúcsok és élek száma
+     • Sűrűség
+     • Átlagos klaszterezettség
+     • Közösségek száma
+
+   - Centralitás mértékek:
      • Közöttiség centralitás
-     • Sajátvektor centralitás
      • PageRank
-   - Hasonlósági statisztikák:
-     • Átlagos hasonlóság más csúcsokhoz
-     • Maximális hasonlóság
+     • Fokszám centralitás
+     • Közelség centralitás
+     • Sajátvektor centralitás
 
-5. Eredmények mentése (save_network_statistics)
-   - Három fő CSV fájl:
-     • subnetwork_stats: hálózat szintű statisztikák
-     • subgraph_stats: komponens szintű statisztikák
-     • node_stats: csúcs szintű statisztikák és beágyazások
-   - Minden statisztika időbélyeggel ellátva
-   - Az eredeti adathalmazhoz hozzáfűzve a gráf jellemzők
+   - További jellemzők:
+     • Átmérő
+     • Átlagos úthossz
+     • Tranzitivitás
+     • Reciprocitás
+     • Asszortativitás
 
-A folyamat végén rendelkezésre állnak:
-- Részletes hálózati metrikák minden részgráfra
-- Csúcsok beágyazásai és közösségei
-- Centralitás és hasonlósági mértékek
-- Az eredeti adathalmaz kiegészítve a hálózati jellemzőkkel
+4. Kimeneti fájlok:
+   a) Metrika fájlok:
+      - *_metrics.json: Gráf szintű metrikák
+      - *_node_metrics.csv: Csúcs szintű metrikák
+      - *_with_metrics.csv: Eredeti adatok kiegészítve a metrikákkal
+      - centrality_analysis_summary.csv: Összesített centralitás elemzés
+      - centrality_analysis_detailed.csv: Részletes centralitás elemzés
+
+   b) Vizualizációk:
+      - Típus alapú színezés (_type_colors.html)
+      - Közösség alapú színezés (_community_colors.html)
+      Minden részgráfra két vizualizáció készül
+
+5. Összesítő elemzések:
+   - Centralitás mértékek kombinált elemzése
+   - Gráf metrikák összehasonlító elemzése
+   - Részletes csúcsszintű metrikák elemzése

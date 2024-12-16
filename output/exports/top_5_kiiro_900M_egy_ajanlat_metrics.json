@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_5_kiiro_900M_egy_ajanlat",
+  "nodes": 424,
+  "edges": 434,
+  "density": 0.002419822472010348,
+  "avg_clustering": 0.0,
+  "number_of_communities": 5,
+  "avg_betweenness": 0.006901332421784242,
+  "avg_pagerank": 0.002358490566037737,
+  "avg_degree_centrality": 0.004839644944020697,
+  "avg_closeness_centrality": 0.002419822472010348,
+  "avg_eigenvector_centrality": 0.04754682223020298,
+  "diameter": 8,
+  "avg_shortest_path": 3.9123622819929524,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.06432643560583996
+}

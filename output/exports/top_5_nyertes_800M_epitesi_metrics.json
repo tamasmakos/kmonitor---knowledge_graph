@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_5_nyertes_800M_epitesi",
+  "nodes": 67,
+  "edges": 68,
+  "density": 0.015377657168701944,
+  "avg_clustering": 0.0,
+  "number_of_communities": 5,
+  "avg_betweenness": 0.022113210172911672,
+  "avg_pagerank": 0.014925373134328353,
+  "avg_degree_centrality": 0.03075531433740388,
+  "avg_closeness_centrality": 0.015377657168701944,
+  "avg_eigenvector_centrality": 0.03317019736123199,
+  "diameter": -1,
+  "avg_shortest_path": -1,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": 0.015351143790240919
+}

@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_szolgáltatás_megrendelés_kiiro",
+  "nodes": 807,
+  "edges": 905,
+  "density": 0.0013913615664425114,
+  "avg_clustering": 0.0,
+  "number_of_communities": 1,
+  "avg_betweenness": 0.00402815239960764,
+  "avg_pagerank": 0.001239157372986369,
+  "avg_degree_centrality": 0.0027827231328850233,
+  "avg_closeness_centrality": 0.0013913615664425114,
+  "avg_eigenvector_centrality": 0.03193731568171126,
+  "diameter": 8,
+  "avg_shortest_path": 4.241423524311161,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.07889066481309367
+}

@@ -1,0 +1,2038 @@
+{
+  "matches": [
+    {
+      "entity_type": "issuer",
+      "name1": "DMRV Duna Menti Regionális Vízmű Zártkörűen Működő Részvénytársaság",
+      "name2": "DMRV Duna Menti Regionális Vízmű Zártkörűen Működő Társaság",
+      "tax_id": "10863877244",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "MÁV Magyar Államvasutak Zártkörűen Működő Részvénytársaság",
+      "name2": "MÁV Magyar Államvasutak Zártkörűen Működő Részvénytársaság ",
+      "tax_id": "EKRSZ_35803375",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Győri Szakképzési Centrum",
+      "name2": "Győri Műszaki Szakképzési Centrum",
+      "tax_id": "15831952208",
+      "similarity": 0.855,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Nemzeti Adó- és Vámhivatal",
+      "name2": "Nemzeti Adó-és Vámhivatal",
+      "tax_id": "15789934251",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "HEPA Magyar Exportfejlesztési Ügynökség Nonprofit Zrt",
+      "name2": "HEPA Magyar Exportfejlesztési Ügynökség Nonprofit Zártkörűen Mű",
+      "tax_id": "24220099243",
+      "similarity": 0.915,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Gottsegen György Országos Kardiológiai Intézet",
+      "name2": "Gottsegen György Országos Kardiovaszkuláris Intézet",
+      "tax_id": "15315386243",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Legfőbb Ügyészség nevében eljáró Bács-Kiskun Megyei Főügyészség",
+      "name2": "Legfőbb Ügyészség nevében eljáró Pest Megyei Főügyészség",
+      "tax_id": "15300148241",
+      "similarity": 0.865,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Legfőbb Ügyészség nevében eljáró Bács-Kiskun Megyei Főügyészség",
+      "name2": "A Legfőbb Ügyészség nevében eljáró Csongrád Megyei Főügyészség",
+      "tax_id": "15300148241",
+      "similarity": 0.87,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Legfőbb Ügyészség nevében eljáró Pest Megyei Főügyészség",
+      "name2": "A Legfőbb Ügyészség nevében eljáró Csongrád Megyei Főügyészség",
+      "tax_id": "15300148241",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Csillagászati és Földtudományi Kutatóközpont",
+      "name2": "MTA Csillagászati és Földtudományi Kutatóközpont",
+      "tax_id": "15300320208",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "FŐKÉTÜSZ Fővárosi Kéményseprőipari Nonprofit Korlátolt Felelősségű Társaság",
+      "name2": "FŐKÉTÜSZ Fővárosi Kéményseprőipari Korlátolt Felelősségű Társaság",
+      "tax_id": "12109584242",
+      "similarity": 0.925,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Kísérleti Orvostudományi Kutatóintézet",
+      "name2": "MTA Kísérleti Orvostudományi Kutatóintézet",
+      "tax_id": "15300526242",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Szentendre Város Önkormányzat",
+      "name2": "Szentendre Város Önkormányzat ",
+      "tax_id": "15731292213",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "MTA Támogatott Kutatócsoportok Irodája",
+      "name2": "Támogatott Kutatócsoportok Irodája",
+      "tax_id": "15329080241",
+      "similarity": 0.94,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "MVMI Informatika Zártkörűen Működő Részvénytársaság",
+      "name2": "MVM Informatika Zártkörűen Működő Részvénytársaság",
+      "tax_id": "EKRSZ_79228174",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Országos Bírósági Hivatal ",
+      "name2": "Országos Bírósági Hivatal",
+      "tax_id": "15795960241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "NFSI Nemzeti Fejlesztési és Stratégiai Intézet Nonprofit Kft.|Honvédelmi Minisztérium Védelemgazdasági Hivatal",
+      "name2": "NFSI Nemzeti Fejlesztési és Stratégiai Intézet Nonprofit Korlátolt Felelősségű Társaság|Honvédelmi Minisztérium Védelemgazdasági Hivatal",
+      "tax_id": "25118764241|15714015251",
+      "similarity": 0.89,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Budapesti Műszaki és Gazdaságtudományi Egyetem",
+      "name2": "Budapesti Műszaki és Gazdaságtudományi Egyetem ",
+      "tax_id": "15308799243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "MVMI Informatika Zártkörűen Működő Részvénytársaság",
+      "name2": "MVM Informatika Zártkörűen Működő Részvénytársaság",
+      "tax_id": "13649588217",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Csongrád Megyei Rendőr-főkapitányság",
+      "name2": "Csongrád-Csanád Megyei Rendőr-főkapitányság",
+      "tax_id": "15720742251",
+      "similarity": 0.915,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Harkányi Termál Rehabilitációs Centrum Közhasznú Nonprofit Korlátolt Felelősségű Társaság",
+      "name2": "Harkányi Termál Rehabilitációs Centrum Nonprofit Korlátolt Felelősségű Társaság",
+      "tax_id": "22265324202",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Erzsébetvárosi Ingatlangazdálkodási Nonprofit Zártkörűen Működő Részvénytársaság",
+      "name2": "EVIN Erzsébetvárosi Ingatlangazdálkodási Nonprofit Zártkörűen Működő Részvénytársaság",
+      "tax_id": "12194528242",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Törökbálint Város Önkormányzata",
+      "name2": "Törökbálint Város Önkormányzat",
+      "tax_id": "15730150213",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Marcali Városi Önkormányzat",
+      "name2": "Marcali Város Önkormányzata",
+      "tax_id": "15731436214",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Petz Aladár Egyetemi Oktató Kórház",
+      "name2": "Petz Aladár Megyei Oktató Kórház",
+      "tax_id": "15366052208",
+      "similarity": 0.85,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Fővárosi Csatornázási Művek Zrt.|Fővárosi Csatornázási Művek Mélyépítő Korlátolt Felelősségű Társaság",
+      "name2": "Fővárosi Csatornázási Művek Zrt.|Fővárosi Csatornázási Művek Mélyépítő és Karbantartó Korlátolt Felelősségű Társaság",
+      "tax_id": "10893850244|12181502243",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Nemzeti Filmintézet Közhasznú Nonprofit Zártkörűen Működő Részvénytársaság",
+      "name2": "Magyar Nemzeti Filmalap Közhasznú Nonprofit Zártkörűen működő Részvénytársaság",
+      "tax_id": "23376159242",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Csongrád Megyei Kormányhivatal",
+      "name2": "Csongrád-Csanád Megyei Kormányhivatal",
+      "tax_id": "15789288206",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Családbarát Magyarország Központ Nonprofit Közhasznú Korlátolt Felelősségű Társaság",
+      "name2": "Családbarát Ország Nonprofit Közhasznú Korlátolt Felelősségű Társaság",
+      "tax_id": "11673260241",
+      "similarity": 0.8600000000000001,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Bocskaikert Községi Önkormányzat",
+      "name2": "Bocskaikert Község Önkormányzat",
+      "tax_id": "15728939209",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Fővárosi Csatornázási Művek Mélyépítő és Karbantartó Korlátolt Felelősségű Társaság",
+      "name2": "Fővárosi Csatornázási Művek Mélyépítő Korlátolt Felelősségű Társaság",
+      "tax_id": "12181502243",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Energiatudományi Kutatóközpont",
+      "name2": "MTA Energiatudományi Kutatóközpont",
+      "tax_id": "15327040243",
+      "similarity": 0.935,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Észak Pesti Tankerületi Központ",
+      "name2": "Észak-Pesti Tankerületi Központ",
+      "tax_id": "15835114242",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "NFSI Nemzeti Fejlesztési és Stratégiai Intézet Nonprofit Kft.|Közbeszerzési és Ellátási Főigazgatóság",
+      "name2": "NFSI Nemzeti Fejlesztési és Stratégiai Intézet Nonprofit Korlátolt Felelősségű Társaság|Közbeszerzési és Ellátási Főigazgatóság",
+      "tax_id": "25118764241|15329396241",
+      "similarity": 0.88,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Gyöngyös Város Önkormányzata",
+      "name2": "Gyöngyös Városi Önkormányzat",
+      "tax_id": "15729370210",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Budapesti Gépészeti Szakképzési Centrum",
+      "name2": "Budapesti Gépészeti Szakkpzési Centrum",
+      "tax_id": "15831866241",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Uszód Községi Önkormányzat",
+      "name2": "Uszód Község Önkormányzat",
+      "tax_id": "15337520203",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Csongrád-Csanád Megyei Egészségügyi Ellátó Központ Hódmezővásárhely-Makó",
+      "name2": "Csongrád Megyei Egészségügyi Ellátó Központ Hódmezővásárhely-Makó",
+      "tax_id": "15355038206",
+      "similarity": 0.95,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Közép- és Kelet-európai Történelem és Társadalom Kutatásáért Közalapítvány",
+      "name2": "Közép- és Kelet-európai Történelem és Társadalom Kutatásáért Alapítvány",
+      "tax_id": "18237010243",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "BKM Budapesti Közművek Nonprofit Zártkörűen Működő Részvénytársaság|DHK Hátralékkezelő és Pénzügyi Szolgáltató Zártkörűen Működő Részvénytársaság",
+      "name2": "FŐTÁV Budapesti Távhőszolgáltató Nonprofit Zártkörűen Működő Részvénytársaság|DHK Hátralékkezelő és Pénzügyi Szolgáltató Zártkörűen Működő Részvénytársaság",
+      "tax_id": "10941362244|12519536243",
+      "similarity": 0.89,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Székkutas Község Önkormányzata",
+      "name2": "Székkutas Községi Önkormányzat",
+      "tax_id": "15726793206",
+      "similarity": 0.965,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Balatoni Halgazdálkodási Nonprofit Zrt.",
+      "name2": "Balatoni Halgazdálkodási Nonprofit Zrt. ",
+      "tax_id": "14830312214",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "HUMDA Magyar Autó-Motorsport és Zöld Mobilitás-fejlesztési Ügynökség Zártkörűen Működő Részvénytársaság",
+      "name2": "HUMDA Magyar Autó-Motorsport Fejlesztési Ügynökség Zártkörűen Működő Részvénytársaság",
+      "tax_id": "25427385241",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Kisar Községi Önkormányzat",
+      "name2": "Kisar Község Önkormányzata",
+      "tax_id": "15405346215",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Széchenyi Alapok Kockázati Tőkealap-kezelő Zártkörűen Működő Részvénytársaság",
+      "name2": "Széchenyi Tőkealap-kezelő Zártkörűen Működő Részvénytársaság",
+      "tax_id": "14830824242",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Magyar Zene Háza Közhasznú Nonprofit Korlátolt Felelősségű Társaság",
+      "name2": "Magyar Zene Háza Nonprofit Korlátolt Felelősségű Társaság",
+      "tax_id": "28742838242",
+      "similarity": 0.925,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "IPOLY ERDŐ Zártkörűen Működő Részvénytársaság",
+      "name2": "IPOLY ERDŐ Zártkörően Működő Részvénytársaság",
+      "tax_id": "11202983212",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Budapest Főváros IX. kerület Ferencváros Önkormányzatának Polgármesteri Hivatala",
+      "name2": "Budapest Főváros IX. Kerület Ferencvárosi Polgármesteri Hivatal",
+      "tax_id": "15509000243",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Maklár Községi Önkormányzat",
+      "name2": "Maklár Község Önkormányzata",
+      "tax_id": "15379164210",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Somogy Megyei Gyermekvédelmi Központ és Területi Gyermekvédelmi Szakszolgálat",
+      "name2": "Somogy Megyei Gyermekvédelmi Központ, Általános Iskola és Területi Gyermekvédelmi Szakszolgálat",
+      "tax_id": "15761811114",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Fővárosi Szabó Ervin Könyvtár ",
+      "name2": "Fővárosi Szabó Ervin Könyvtár",
+      "tax_id": "EKRSZ_ 82146863",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Rényi Alfréd Matematikai Kutatóintézet",
+      "name2": "MTA Rényi Alfréd Matematikai Kutatóintézet",
+      "tax_id": "15300337241",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Bocskai István Református Oktatási Központ – Óvoda, Általános Iskola, Gimnázium, Technikum, Szakgimnázium, Szakképző Iskola, Alapfokú Művészeti iskola és Kollégium",
+      "name2": "Bocskai István Református Oktatási Központ – Óvoda, Általános Iskola, Gimnázium, Szakgimnázium, Szakközépiskola, Alapfokú Művészeti iskola és Kollégium",
+      "tax_id": "18684443213",
+      "similarity": 0.935,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Csongrád-Csanád Megyei Mellkasi Betegségek Szakkórháza",
+      "name2": "Csongrád Megyei Mellkasi Betegségek Szakkórháza",
+      "tax_id": "15355715206",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "DEBRECENI KÉPZŐ KÖZPONT Oktatási Szolgáltató Nonprofit Korlátolt Felelősségű Társaság",
+      "name2": "DEBRECENI KÉPZŐ KÖZPONT Oktatási Szolgáltató Nonprofit Közhasznú Korlátolt Felelősségű Társaság",
+      "tax_id": "22162111209",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "issuer",
+      "name1": "Budapest Főváros XIV. Kerület Zuglói Polgármesteri Hivatal",
+      "name2": "Budapest főváros XIV. Kerület Zuglói Polgármesteri Hivatal",
+      "tax_id": "15514004242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Vodafone Magyarország Távközlési Zártkörűen Működő Részvénytársaság",
+      "name2": "Vodafone Magyarország Mobil Távközlési Zártkörűen Működő Részvénytársaság",
+      "tax_id": "11895927244,HU11895927",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HARTMANN-RICO Hungária Kft.",
+      "name2": "HARTMANN-RICO Hungaria Kft.",
+      "tax_id": "12278923213,HU12278923",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Halker Élelmiszer és Iparcikk Kereskedelmi Korlátolt Felelősségű Tárrsaság",
+      "name2": "Halker Élelmiszer és Iparcikk Kereskedelmi Korlátolt Felelősségű Társaság",
+      "tax_id": "10378876214,HU 10378876",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Xylem Water Solutions Magyarország Kft",
+      "name2": "Xylem Water solutions Magyarország Kft",
+      "tax_id": "10489299213,HU10489299",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Kom-Szer 2000 Kft.",
+      "name2": "Kom-Szer 2000 Bt.",
+      "tax_id": "20631569213",
+      "similarity": 0.91,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Everling Városépítő, Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Everling Városépítő, Építőipari Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "24238278213,HU24238278",
+      "similarity": 0.935,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " Life Technologies MO Kft.",
+      "name2": "Life Technologies MO Kft.",
+      "tax_id": "11870120-2-41",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " Life Technologies MO Kft.",
+      "name2": "Life Technologies Kft.",
+      "tax_id": "11870120-2-41",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Life Technologies MO Kft.",
+      "name2": "Life Technologies Kft.",
+      "tax_id": "11870120-2-41",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ENGIE Magyarország Korlátolt Felelősségű Társaság",
+      "name2": "EQUANS Magyarország Korlátolt Felelősségű Társaság",
+      "tax_id": "12348356243",
+      "similarity": 0.925,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "CRH Magyarország Korlátolt Felelősségű Társaság",
+      "name2": "Danucem Magyarország Korlátolt Felelősségű Társaság",
+      "tax_id": "24083621244",
+      "similarity": 0.915,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "BUDAKER Kereskedelmi Gyártó és Szolgáltató Kft",
+      "name2": "BUDAKER Kereskedelmi és Szolgáltató Kft",
+      "tax_id": "12248885243",
+      "similarity": 0.9299999999999999,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ETIAM Kft.",
+      "name2": "Etiam Kft.",
+      "tax_id": "24909707-2-06",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hunép Universal Építőipari Zártkörűen Működő Részvénytársaság",
+      "name2": "Hunép Építőipari Zártkörűen Működő Részvénytársaság",
+      "tax_id": "12656770209,HU12656770",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Fresenius Kabi Hungary Vegy-, Gyógyszeripari és Kereskedelmi Korlátolt Felelősséű TársaságKft.",
+      "name2": "Fresenius Kabi Hungary Vegy-, Gyógyszeripari és Kereskedelmi Korlátolt Felelősségű Társaság.",
+      "tax_id": "10736687241,HU 10736687",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HVT-BAU Korlátolt Felelősségű Társaság",
+      "name2": "HVT-BAU Korlátotlt Felelősségű Társaság",
+      "tax_id": "25914735213",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "GOLDI MOBILITY Korlátolt Felelősségű Társaság",
+      "name2": "GOLDI MOBILITY Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "10433418213,HU104334188",
+      "similarity": 0.885,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Septox Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátozott Felelőségű Társaság",
+      "name2": "SEPTOX Kórházi és Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátolt Felelősségű Társaság",
+      "tax_id": "10657232242,HU10657232",
+      "similarity": 0.92,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Septox Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátozott Felelőségű Társaság",
+      "name2": "Septox Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátolt Felelősségű Társaság",
+      "tax_id": "10657232242,HU10657232",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SEPTOX Kórházi és Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátolt Felelősségű Társaság",
+      "name2": "Septox Egészségügyi Hulladékokat Gyűjtő, Szállító és Ártalmatlanító Korlátolt Felelősségű Társaság",
+      "tax_id": "10657232242,HU10657232",
+      "similarity": 0.95,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Valton-Sec Kereskedelmi és Szolgáltató Zrt.",
+      "name2": "Valton-Sec Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "27312050243,HU27312050",
+      "similarity": 0.925,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Digitran Hungária Digitális Transzformáció Zrt.",
+      "name2": "DIGITRAN Hungária Digitális Transzformáció Zrt.",
+      "tax_id": "26196413241,HU26196413",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Z.E.H. Energetikai és Építőipari Kft.",
+      "name2": "Z.E.H. Energetikai és Építőipari Kt",
+      "tax_id": "14609190220,HU14609190",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Itelligence Hungary Informatika Kft.",
+      "name2": "itelligence Hungary Informatika Kft.",
+      "tax_id": "10960273243,HU10960273",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Endo-Plu-Service Javító, Szolgáltató és Kereskedelmi Kft.",
+      "name2": "Endo-Plus-Service Javító, Szolgáltató és Kereskedelmi Kft.",
+      "tax_id": "13140072242,HU13140072,Cg. 01-09-720704",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Szolnok Aszfalt Kft.",
+      "name2": "Szolnok Aszfalt Kft.  ",
+      "tax_id": "14836569242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Dimension Data Magyarország Kft.",
+      "name2": "Dimension Data Magyarország kft",
+      "tax_id": "12655085243,HU12655085",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VAMAV Vasúti Berendezések Korlátolt Felelősségű Társaság",
+      "name2": "VAMAV Vasúti Berendezések Korlátolt Felelősségű Társaság ",
+      "tax_id": "10655436-2-10",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Komplex-Car szolgáltató és Kereskedelmi betéti Társaság",
+      "name2": "Komplex-Car Kereskedelmi és Szolgáltató Betéti Társaság",
+      "tax_id": "21802223205,HU2182223",
+      "similarity": 0.865,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Geoszolg Mélyépítőipari és Vállalkozói Korlátolt Felelősségű Társaság",
+      "name2": "Geoszolg Mélyépítőipari és Vállalkozási Korlátolt Felelősségű Társaság",
+      "tax_id": "10902563213,HU10902563",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PÜSPÖKI ÉPÍTOIPARI Korlátolt Felelosségu Társaság",
+      "name2": "PÜSPÖKI ÉPÍTŐIPARI Korlátolt Felelősségű Társaság",
+      "tax_id": "25323614203,HU25323614",
+      "similarity": 0.935,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ÓBUDA-ÚJLAK Beruházásszervező és Fővállalkozó Zrt.|FEJÉR Tervező és Mérnökiroda Korlátolt Felelősségű Társaság|GYŐRBER Mérnöki és Szolgáltató Kft.",
+      "name2": "ÓBUDA-ÚJLAK Beruházásszervező és Fővállalkozó Zrt.|név: FEJÉR Tervező és Mérnökiroda Korlátolt Felelősségű Társaság|GYŐRBER Mérnöki és Szolgáltató Kft.",
+      "tax_id": "12344709-2-41|25895470-2-07|12093252-2-08",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Kiskőrösi Önkormányzat Kommunális Szolgáltató Nonprofit Kft.",
+      "name2": "Kiskőrös Önkormányzat Kommunális Szolgáltató Nonprofit Kft.",
+      "tax_id": "10495995203,HU10495995",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "JAS Budapest Kereskedelmi és Szolgáltató Zrt.",
+      "name2": "JAS Budapest Kereskedelmi és Szolgálató Zrt.",
+      "tax_id": "12936773244,HU12936773",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SZENTMIKLÓSI PÉKSÉG KORLÁTOLT FELELŐSSÉGŰ TÁRSASÁG",
+      "name2": "Szentmiklósi Pékség Korlátolt Felelősségű Társaság",
+      "tax_id": "24358527216",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Tűzbiztonság 2000 Kereskedelmi és Szolgáltató Kft.",
+      "name2": "Tűzbiztonság 2000 Kereskedelmi, Szakértői és Szolgáltató Kft.",
+      "tax_id": "10458813241",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HÓD-MEZŐ Gépjárműjavító és Szolgáltató Kft.",
+      "name2": "HÓD-MEZŐ Gépjárműjavító és Szolgáltató Kft",
+      "tax_id": "11396260206",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Carwork Gépjárműjavító és Szolgáltató Kft.",
+      "name2": "Carwork Gépjárműjavító és Szolgáltató Kft. ",
+      "tax_id": "13805269204",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Garden Kertészeti és Erdészeti Szolgáltató Korlátolt Felelősségű Társaság|Garden Fasorfenntartó Kertészeti Szolgáltató Kft.|RENESZÁNSZ KERTÉPÍTŐ Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Garden Kertészeti és Erdészeti Szolgáltató Kft.|Garden Fasorfenntartó Kertészeti Szolgáltató Kft.|RENESZÁNSZ KERTÉPÍTŐ Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "10353048243,HU10353048|14678374243,HU14678374|13071578213",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "B&K 2002 Kft.",
+      "name2": "B&K 2002 Kft",
+      "tax_id": "12996777243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Bioszeparáció Kft.",
+      "name2": "Bioszeparáció Kft",
+      "tax_id": "24887597242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UNICAM Magyarország Kft.",
+      "name2": "Unicam Magyarország Kft.",
+      "tax_id": "10853940242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "GEN-LAB Kft.",
+      "name2": "Gen-Lab Kft.",
+      "tax_id": "12326222243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Játékdiagnosztika Kereskedelmi és Szolgáltató Nonprofit Kft.",
+      "name2": "Játékdiagnosztika Szolgáltató és Kereskdelmi Nonprofit Kft.",
+      "tax_id": "22615918242,HU22615918",
+      "similarity": 0.865,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "DUBA SPED KFT",
+      "name2": "DUBA-SPED KFT",
+      "tax_id": "12112263209",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "TURA-Terv Mérnökiroda Kft.| Via Futura Mérnöki, Tanácsadó és Szolgáltató Kft.",
+      "name2": "TURA-Terv Mérnökiroda Kft.|Via Futura Mérnöki, Tanácsadó és Szolgáltató Kft.",
+      "tax_id": "12602908242|13260534-2-43",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UTIBER Közúti Beruházó Kft|PARTNER Mérnöki Iroda Tervező, Kivitelező Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": " UTIBER Közúti Beruházó Kft| PARTNER Mérnöki Iroda Tervező, Kivitelező Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "10554885-2-43|11475464-2-11",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társaság",
+      "name2": " RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társaság",
+      "tax_id": "10624672242|13188409-2-41",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UVATERV Út-, Vasúttervező Zrt.,",
+      "name2": "UVATERV Út-, Vasúttervező Zrt.",
+      "tax_id": "10867156243",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társaság",
+      "name2": "RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társa",
+      "tax_id": "10624672242|13188409241",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FŐMTERV Mérnöki Tervező Zrt.",
+      "name2": "FŐMTERV Mérnöki Tervező Zrt.,",
+      "tax_id": "13842217241",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társaság",
+      "name2": "RODEN Mérnöki Iroda Korlátolt Felelősségű Társaság|Bokút-Terv Mérnöki és Vállalkozó Korlátolt Felelősségű Társaság (",
+      "tax_id": "10624672242",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Teva Gyógyszergyár Zártkörűen Működő Részvénytársaság",
+      "name2": "TEVA Gyógyszergyár Zártkörűen Működő Részvénytársaság",
+      "tax_id": "10318353209,HU10318353",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VERDI-ÉP KFT.",
+      "name2": "Verdi.Ép Kft",
+      "tax_id": "12437889209",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "DBM Banktechnikai és Kereskedelmi Korlátolt Felelősségű Társaság",
+      "name2": "DBM Banktechnikai Korlátolt Felelősségű Társaság",
+      "tax_id": "10502431241,HU10502431",
+      "similarity": 0.855,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "name2": "UNITEF'83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "tax_id": "12108129243,HU12108129",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "LABORDIAGNOSZTIKA Korlátolt Felelősségű Társasaág",
+      "name2": "LABORDIAGNOSZTIKA Korlátolt Felelősségű Társaság",
+      "tax_id": "24274548242",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "TOP-KVALITÁS Tervező és Szolgáltató Kft.",
+      "name2": "Top-Kvalitás Tervező és Szolgáltató Kft.",
+      "tax_id": "11474762211,HU 11474762",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "T-Családi Plus Kft",
+      "name2": "T-Családi Plus Kft.",
+      "tax_id": "14012066215,HU14012066",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Stravaco Építőipari Korlátolt Felelősségű Társaság  ",
+      "name2": "Stravaco Építőipari Korlátolt Felelősségű Társaság",
+      "tax_id": "24814694206",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AQUAPLUS Kútfúró, Építő és Termál-energetikai Korlátotl Felelősségű Társaság",
+      "name2": "AQUAPLUS Kútfúró, Építő és Termál-energetikai Korlátolt Felelősségű Társaság",
+      "tax_id": "10263806206",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "LifeTechnologies MO Kft.",
+      "name2": "Life Technologies MO Kft.",
+      "tax_id": "11870120241,HU11870120",
+      "similarity": 0.915,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hidrográd Víz és Közműépítő Korlátolt Felelősségű Társaság",
+      "name2": "Hidrográd Víz és Közműépítő Korlátolt Felelősségű Kft",
+      "tax_id": "14335556213,HU14335556,13-09-120537",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SIRIUS PRODUKT Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "SIRIUS PRODUKT Kereskedelmi, Gyártó és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "13243120241,HU13243120",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " GEOTECHNIKA '84 Víz- és Csatornaépítő Korlátolt Felelősségű Társaság",
+      "name2": "GEOTECHNIKA '84 Víz- és Csatornaépítő Korlátolt Felelősségű Társaság",
+      "tax_id": "11295688-2-17",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "GÉP-COOP Gépipari és Szolgáltató Korlátolt Felelősségű Társaság ",
+      "name2": "GÉP -COOP Gépipari és Szolgáltató Korlátolt Felelősségű Társaság ",
+      "tax_id": "13746551-2-19",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Scabello Ipari és Szolgáltató Bt",
+      "name2": "Scabello Ipari és Szolgáltató Bt.",
+      "tax_id": "21638624206",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató kft.",
+      "name2": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató",
+      "tax_id": "11392668206",
+      "similarity": 0.965,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató kft.",
+      "name2": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató Kft.",
+      "tax_id": "11392668206",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató",
+      "name2": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató Kft.",
+      "tax_id": "11392668206",
+      "similarity": 0.965,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PK-É.H.K. Építészeti, Hídépítési és Kertészeti Kft.",
+      "name2": "PK-É.H.K. Építészetti, Hídépítési és Kertészeti Kft.",
+      "tax_id": "12820063202",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "CarNet For-Top Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "FOR-TOP Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "11121701244,HU11121701",
+      "similarity": 0.945,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "IP.PLANET Építőipari, Kereskedelmi és Szolgáltató Kft.",
+      "name2": "IP PLANET Építőipari, Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "12866838243,HU12866838",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Halliburton Company Germany Gmbh Magyarországi Fióktelepe ",
+      "name2": "Halliburton Company Germany Gmbh Magyarországi Fióktelepe",
+      "tax_id": "22248460241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hydro Property Korlátolt Felelősségű Társaság",
+      "name2": "\"Hydro Property\" Korlátolt Felelősségű Társaság",
+      "tax_id": "24309217202,HU24309217",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "OMV Hungária Ásványolaj Korlátolt Felelősségű Társaság Hatályos",
+      "name2": "OMV Hungária Ásványolaj Korlátolt Felelősségű Társaság",
+      "tax_id": "10542925244,HU 10542925",
+      "similarity": 0.92,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SZENTINEL Vagyonvédelmi, Biztonság-Technikai Szolgáltató Kft ",
+      "name2": "SZENTINEL Vagyonvédelmi, Biztonság-Technikai Szolgáltató Kft",
+      "tax_id": "12988756",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Astron Informatikai Fejlesztő és Tanácsadó Korlátolt Felelősségű Társaság",
+      "name2": " Astron Informatikai Fejlesztő és Tanácsadó Korlátolt Felelősségű Társaság",
+      "tax_id": "11929657243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Nyírség Nehézgép 93 Javító és Szolgáltató Betéti Társaság",
+      "name2": "Nyírség Nehézgép Javító és Szolgáltató Betéti Társaság",
+      "tax_id": "25651218215,HU25651218",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Gramalpin 2007 Építőipari, Kereskedelmi és Szolgáltató Kft.",
+      "name2": "Gramalpin 2007 Építőipari,Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "13991610241",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Brunata ZENNER Korlátolt Felelősségű Társaság",
+      "name2": "Zenner&Becker Korlátolt Felelősségű Társaság",
+      "tax_id": "10710542243,HU10710542",
+      "similarity": 0.86,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AB Consulting Group Tanácsadó és Szolgáltató Zártkörűen Működő Részvénytársaság",
+      "name2": "Angyal Business Consulting Tanácsadó és Szolgáltató Zártkörűen Működő Részvénytársaság",
+      "tax_id": "25278150241,HU25278150",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SZITEM FAMILY Kereskedelmi és Szolgáltató Kft.",
+      "name2": "SZITEMÁG Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "23817876242",
+      "similarity": 0.895,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Maritime Kereskedelmi és Szolgáltató Kft",
+      "name2": "Maritime Kereskedlemi és Szolgáltató Kft",
+      "tax_id": "10534935213",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "E-Consult 2000 Korlátolt Felelősségű Társaság",
+      "name2": "E-Consult 2000. Tanácsadó Korlátolt Felelősségű Társaság",
+      "tax_id": "12535815243,HU12535815",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Number One Cleaning Takaritó és Szolgáltató Korlátolt Felellőségű Társaság",
+      "name2": "Number One Cleaning Takaritó és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "24744405202,HU24744405",
+      "similarity": 0.985,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Number One Cleaning Takaritó és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Number One CleaningTakaritó és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "24744405-2-02",
+      "similarity": 0.94,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "K-E-S AUDIT Könyvvizsgáló, Könyvvezető és Adószakértő Korlátolt Felelősségű Társaság",
+      "name2": "MOORE STEPHENS K-E-S AUDIT Könyvvizsgáló, Könyvvezető és Adószakértő Korlátolt Felelősségű Társaság",
+      "tax_id": "11883816241,HU11883816",
+      "similarity": 0.915,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft.",
+      "name2": "UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft. ",
+      "tax_id": "10429635-2-06",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft.",
+      "name2": ": UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft.",
+      "tax_id": "10429635-2-06",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft. ",
+      "name2": ": UNICHEM Vegyipari, Kereskedelmi, Szolgáltató Kft.",
+      "tax_id": "10429635-2-06",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " VízTEC Zrt.",
+      "name2": "VízTEC Zrt. ",
+      "tax_id": "22975085-2-13",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " VízTEC Zrt.",
+      "name2": "VízTEC Zrt.",
+      "tax_id": "22975085-2-13",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VízTEC Zrt. ",
+      "name2": "VízTEC Zrt.",
+      "tax_id": "22975085-2-13",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Levissimo Kereskedelmi és Szolgáltató Kft.",
+      "name2": "Levissimo Kereskedelmi és Szolgáltató Kft",
+      "tax_id": "12175057241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Zenon Bio Kft",
+      "name2": "Zenon Bio Kft.",
+      "tax_id": "10524259206",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Mecenatura Betéti Társaság",
+      "name2": "Mecenatura Betéti társaság",
+      "tax_id": "25021202209",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Speeding Mérnöki Kereskedelmi és Szolgáltató Kft. ",
+      "name2": "Speeding Mérnöki Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "10705775-2-43",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "\"Totál Tréning\" Oktatási Korlátolt Felelősségű Társaság",
+      "name2": "\"TOTÁL TRÉNING\" Oktatási Korlátolt Felelősségű Társaság",
+      "tax_id": "11442000205,HU11442000",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PRIZMA-Food Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Prizma Food Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "25447936213",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Balaton Busz Bt",
+      "name2": "Balaton Busz Bt.",
+      "tax_id": "27217326-2-19",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "B Euro Car Kft",
+      "name2": "B Euro Car Kft.",
+      "tax_id": "25108583-2-13",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hovány Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Hovány Kereskedelmi és Szolgáltató Korlátolt Felelősségű",
+      "tax_id": "10621844203, HU10621844",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Mercarius Flottakezelő Korlátolt Felelősségű Társaság ",
+      "name2": "Mercarius Flottakezelő Korlátolt Felelősségű Társaság",
+      "tax_id": "12238673242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Benedek Generál Korlátolt Felelőségű Társaság",
+      "name2": "Benedek Generálkivitelező Korlátolt Felelőségű Társaság",
+      "tax_id": "23566611214",
+      "similarity": 0.895,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VAMAV Vasúti Berendezések Korlátolt Felelősségű Társaság",
+      "name2": "VAMAV Vasúti Berendezések Korlátolt Felelősségű Társaság ",
+      "tax_id": "10655436210",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Grepton Informatikai Zártkörűen Működő Részvénytársaság ",
+      "name2": "Grepton Informatikai Zártkörűen Működő Részvénytársaság",
+      "tax_id": "12613056242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Bodrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Bogrogi Bau Kivitelező, Tervező, Kereskedő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "11392668-2-06",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Huntraco Kereskedelmi és Szolgáltató Zrt",
+      "name2": "Huntraco Kereskedelmi és Szolgáltaló Zrt",
+      "tax_id": "10509036244,HU10509036",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "F & F Kereskedelmi és Szolgáltató Kft",
+      "name2": "F & K Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "12024009213",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "KTI Közlekedéstudományi Intézet Nonprofit Kft.|BME ITS Közlekedési- és Járműrendszerek Nonprofit Zártkörűen Működő Részvénytársaság",
+      "name2": "KTI Közlekedéstudományi Intézet Nonprofit Korlátolt felelősségű társaság|BME ITS Közlekedési- és Járműrendszerek Nonprofit Zártkörűen Működő Részvénytársaság",
+      "tax_id": "21925221243,HU21925221|24790358243,HU24790358",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VIBROCOMP Akusztikai, Számítástechnikai Szolgáltató és Nemzeti azonosítószám Kereskedelmi Kft.|UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Nemzeti azonosítószám Részvénytársaság",
+      "name2": "VIBROCOMP Akusztikai, Számítástechnikai Szolgáltató és Kereskedelmi Kft|UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "tax_id": "10766323243|12108129243",
+      "similarity": 0.87,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Telmex-Nowy Styl Bútorgyártó és Kereskedelmi Zrt.",
+      "name2": "Telmex-Nowy Styl Bútorgyártó és Kereskedelmi Zrt.,",
+      "tax_id": "12561791213",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "VIBROCOMP Akusztikai, Számítástechnikai Szolgáltató és Kereskedelmi Kft.|UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "name2": "VIBROCOMP Akusztikai, Számítástechnikai Szolgáltató és Kereskedelmi Kft|UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "tax_id": "10766323-2-43|12108129-2-43",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Metal 99 Fémszerkezet Gyártó és Szolgáltató Kft. ",
+      "name2": "METAL 99\" Fémszerkezet Gyártó és Szolgáltató Kft",
+      "tax_id": "10612028213",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "NAST Alkatrészgyártó Kft.",
+      "name2": "NAST Alkatrészgyártó Kft",
+      "tax_id": "10269709241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Szikametró89 Kft",
+      "name2": "Szikametró89 Kft.",
+      "tax_id": "10318133213",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Ásatárs Kulturális, Régészeti Szolgáltató és Kereskedelmi Korlátolt Felelősség|Ex Voto Régészeti Korlátolt Felelősségű Társaság",
+      "name2": "Ásatárs Kulturális, Régészeti Szolgáltató és Kereskedelmi Korlátolt Felelősségű Társaság|Ex Voto Régészeti Korlátolt Felelősségű Társaság",
+      "tax_id": "13245919203|13909961243",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Propontis Mérnöki Tervező, Tanácsadó, Szakértő és Építőipari Kivitelező Korlátolt Felelősségű Társaság|UNITEF'83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "name2": "Propontis Mérnöki Tervező, Tanácsadó, Szakértő és Építőipari Kivitelező Korlátolt Felelősségű Társaság|UNITEF-83 Műszaki Tervező és Fejlesztő Zártkörűen Működő Részvénytársaság",
+      "tax_id": "23388136242,HU23388136|12108129243,HU12108129",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Radián Építőipari Tervező, Szervező, Üzemeltető Kft.",
+      "name2": "\"RADIÁN\" Építőipari Tervező, Szervező, Üzemeltető Kft.",
+      "tax_id": "10547030213",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Uni-Flock Kft.",
+      "name2": " Uni-Flock Kft.",
+      "tax_id": "12746747241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "NG PROJECT Automatizálási és Szolgáltató Korlátolt Felelősségü Társaság",
+      "name2": "NG PROJECT Automatizálási, Informatikai és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "13259039205",
+      "similarity": 0.9,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hufer-Bau Kft. ",
+      "name2": "Hufer-Bau Kft.",
+      "tax_id": "12626704-2-43",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Fauna-Duó Kft.",
+      "name2": "Fauna-Duó Kft. ",
+      "tax_id": "12319020-2-42",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "\"New Generation Technologies\" Rendszerfejlesztő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "New Generation Technologies Rendszerfejlesztő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "12870941243,HU12870941,Cg.01-09-707508",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Yettel Magyarország Zártkörűen Működő Részvénytársaság",
+      "name2": "Telenor Magyarország Zártkörűen Működő Részvénytársaság",
+      "tax_id": "11107792244,HU11107792",
+      "similarity": 0.9299999999999999,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "NILAX BAU KFT",
+      "name2": "NILAX BAU KFT.",
+      "tax_id": "11682880242,HU11682880",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ROVÉRT ROVAR- ÉS RÁGCSÁLÓIRTÓ KFT",
+      "name2": "ROVÉRT ROVÉRT- ÉS RÁGCSÁLÓIRTÓ KFT",
+      "tax_id": "10326886204,HU10326886",
+      "similarity": 0.96,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "KOMFORT-PLUSSZÉPÓLETGÉPÉSZETI ÉS SZOLGÁLTATÓ KFT",
+      "name2": "KOMFORT-PLUSSZ ÉPÜLETGÉPÉSZETI ÉS SZOLGÁLTATÓ KFT",
+      "tax_id": "11985853210",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hivatalos név: Vendomatic Hungary Korlátolt Felelősségű Társaság",
+      "name2": "Vendomatic Hungary Korlátolt Felelősségű Társaság",
+      "tax_id": "25055588242",
+      "similarity": 0.87,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Horváth Color Korlátolt Felelősségű Társaság",
+      "name2": "Horváth Color Építőipari Korlátolt Felelősségű Társaság",
+      "tax_id": "13672571208,HU13672571",
+      "similarity": 0.895,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Lábatlani Vasbetonipari Zrt.",
+      "name2": "Lábatlan Vasbetonipari Zrt.",
+      "tax_id": "11182902211",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Gréti-Kerbau Kereskedelmi, Gyártó és Szolgáltató Kft.",
+      "name2": "Gréti-Kerbau Kereskedelmi, Gyártó és Szolgáltató Kft. ",
+      "tax_id": "26157384213",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Tri-Ózon Kereskedelmi és Szolgáltató Korlátolt Felelősségű társaság",
+      "name2": "TRI-ÓZON Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "14880551208,HU14880551",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SYNLAB Hungary Kft.",
+      "name2": "Synlab Hungary Kft.",
+      "tax_id": "14872925243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "2.számú Mélyépítő Korlátolt Felelősségű Társaság",
+      "name2": "2.sz. Mélyépítő Korlátolt Felelősségű Társaság",
+      "tax_id": "14788930214",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Gy-út Vasútépítő 88 Kft",
+      "name2": "GY-ÚT-VASÚTÉPÍTŐ 88 Kft",
+      "tax_id": "14810819213",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "stone dekor Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Stone dekor Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "14654781213,HU14654781,13 09 154777",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "TTSZ Bau Festő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "TTSZ Bau Festő, Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "24226617217,24226617",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Ferrobeton Dunaújvárosi Beton – és Vasbetonelem-gyártó Zrt.|SW Umwelttechnik Magyarország Építőelemgyár Kft.",
+      "name2": "Ferrobeton Dunaújvárosi Beton – és Vasbetonelem-gyártó Zrt.|SW Umwelttechnik Magyarország Építőelemgyár Korlátolt Felelősségű Társaság",
+      "tax_id": "11104270207|11952107244,HU11952107",
+      "similarity": 0.885,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HTS-ART Nyomdaipari és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "HTHTS-ART Nyomdaipari és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "12109450242",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Sió-Friss Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság|Halker Élelmiszer és Iparcikk Kereskedelmi Korlátolt Felelősségű Társaság",
+      "name2": "Sió-Friss Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság|Halker Élelmiszer Kereskedelmi, Gyártó és Feldolgozó Korlátolt Felelősségű Társaság",
+      "tax_id": "14661323214,HU14661323|10378876214,HU 10378876",
+      "similarity": 0.895,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Hu-Tesz korlátolt felelöségü társaság",
+      "name2": "HU-TESZ Korlátolt Felelősségű Társaság.",
+      "tax_id": "27066687203",
+      "similarity": 0.935,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Europrinting Kft",
+      "name2": "Europrinting Kft.",
+      "tax_id": "12628706243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű  Társaság",
+      "name2": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Társaság",
+      "tax_id": "10801761243|14894547242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zártkörűen Működő Részvénytársaság |Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Társaság ",
+      "name2": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Nemzeti azonosítószám Társaság",
+      "tax_id": "10801761-2-43|14894547-2-42",
+      "similarity": 0.85,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zártkörűen Működő Részvénytársaság |Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Társaság ",
+      "name2": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Társaság",
+      "tax_id": "10801761-2-43|14894547-2-42",
+      "similarity": 0.895,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Nemzeti azonosítószám Társaság",
+      "name2": "FTV Geotechnikai, Geodéziai és Környezetvédelmi Zrt.|Különleges Biztonsági Szolgáltató és Tanácsadó Korlátolt Felelősségű Társaság",
+      "tax_id": "10801761-2-43|14894547-2-42",
+      "similarity": 0.92,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "DÉL BAU Építő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Agroszemek Bau Építő és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "14534470206",
+      "similarity": 0.885,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Garden Fasorfenntartó Kertészeti Szolgáltató Kft.|Garden Kertészeti és Erdészeti Szolgáltató Kft.",
+      "name2": "Garden Fasorfenntartó Kertészeti Szolgáltató Kft.|Garden Kertészeti és Erdészeti Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "14678374243,HU14678374|10353048243,HU10353048",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HE-DO Útépítő, Kereskedelmi és Szolgáltató Korlátolt Felelősségű  Társaság",
+      "name2": "HE-DO Útépítő, Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "10683833241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "MENTO Környezetkultúra Korlátolt Felelősségű Társaság",
+      "name2": "MENTO Környezetkultúra Korlátolt Felelősségű Társaság ",
+      "tax_id": "11440424205",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Csepel Techno Olaj- és Gázipari Berendezéseket Gyártó Korlátolt Felelősségű Társaság",
+      "name2": "Csepel Techno Olaj- és Gázipari Berendezéseket Gyártó Korlátolt Felelősségű Társaság ",
+      "tax_id": "10519248243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AKEBA Mélyépítő és Szolgáltató Kft",
+      "name2": "AKEBA Méylépítő és Szolgáltató Kft",
+      "tax_id": "11360078202,HU 11360078-2-02",
+      "similarity": 0.965,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Ukatemi Technologies Korlátolt Felelősségű Társaság ",
+      "name2": "Ukatemi Technologies Korlátolt Felelősségű Társaság",
+      "tax_id": "24197308243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Líra Könyv Zrt",
+      "name2": "Líra Könyv Zrt.",
+      "tax_id": "10853665-2-42",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Sándoraszfalt Útépítő Korlátolt Felelősségű Társaság",
+      "name2": "Sándoraszfalt Útépítő Korlátlan Felelősségű Társaság",
+      "tax_id": "24720795242",
+      "similarity": 0.955,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SAPEX DUETT KFT",
+      "name2": "SÁPEX DUETT KFT",
+      "tax_id": "14022010209,HU14022010",
+      "similarity": 0.95,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Anton Wottle Maschinen- und Weinpressenbau GmbH.",
+      "name2": "Wottle Maschinen- und Weinpressenbau GmbH.",
+      "tax_id": "ATU51910703",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Aptus Formula Szolgáltató és Kereskedelmi Korlátolt Felelősségű Társaság",
+      "name2": "APTUS FORMULA Szolgáltató és Kereskedelmi Korlátolt Felelősségű Társaság",
+      "tax_id": "22690757215",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PFM Holding Zrt. |PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft.",
+      "name2": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft. ",
+      "tax_id": "25150597243|13608471243|25348655243",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PFM Holding Zrt. |PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft.",
+      "name2": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft.",
+      "tax_id": "25150597243|13608471243|25348655243",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft. ",
+      "name2": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft.",
+      "tax_id": "25150597243|13608471243|25348655243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AIRPORT SERVICE BUDAPEST Kereskedelmi és Szolgáltató Zártkörűen Működő 23468788243 Részvénytársaság|Novum Guard Szolgáltató Korlátolt Felelősségű Társaság|PREV-INFO Korlátolt Felelősségű Társaság|Holdesco Ingatlanhasznosító és Üzemeltető Korlátolt Felelősségű Társaság",
+      "name2": "AIRPORT SERVICE BUDAPEST Kereskedelmi és Szolgáltató Zártkörűen Működő Részvénytársaság|Novum Guard Szolgáltató Korlátolt Felelősségű Társaság|PREV-INFO Korlátolt Felelősségű Társaság|Holdesco Ingatlanhasznosító és Üzemeltető Korlátolt Felelősségű Társaság",
+      "tax_id": "23468788243|25444744241|23134841241|13963244242",
+      "similarity": 0.975,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AIRPORT SERVICE BUDAPEST Kereskedelmi és Szolgáltató  Zártkörűen Működő Részvénytársaság|PREV-INFO Korlátolt Felelősségű Társaság|Novum Guard Szolgáltató Korlátolt Felelősségű Társaság|Holdesco Ingatlanhasznosító és Üzemeltető Korlátolt Felelősségű Társaság",
+      "name2": "AIRPORT SERVICE BUDAPEST Kereskedelmi és Szolgáltató Zártkörűen Működő Részvénytársaság|PREV-INFO Korlátolt Felelősségű Társaság|Novum Guard Szolgáltató Korlátolt Felelősségű Társaság|Holdesco Ingatlanhasznosító és Üzemeltető Korlátolt Felelősségű Társaság",
+      "tax_id": "23468788243|23134841241|25444744241|13963244242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Still Villástargonca Kereskedlemi és Szolgáltató Kft.",
+      "name2": "Still Villástargonca Kereskedelmi és Szolgáltató Kft.",
+      "tax_id": "11182751211,HU11182751",
+      "similarity": 0.98,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Fusion Architect Építészeti és Szolgáltató Kft.",
+      "name2": "Fusion Architect Építészeti és Suzolgáltató Kft.",
+      "tax_id": "14121717213,14121717",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Interton Elekrtoakusztukai Kft.",
+      "name2": "Interton Elekrtoakusztikai Kft.",
+      "tax_id": "10448962243",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "RK Tech Kereskedelmi és Szolgáltató Kft.| VWR International Korlátolt Felelősségű Társaság",
+      "name2": "RK Tech Kereskedelmi és Szolgáltató Kft.|VWR International Korlátolt Felelősségű Társaság",
+      "tax_id": "12395152-2-42|10650400-2-09",
+      "similarity": 0.995,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Gerulus Kereskedelmi és Szolgáltató Kft.",
+      "name2": "Gerulus Kereskedelmi és Szolgáltató Kft",
+      "tax_id": "12533583-2-13",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "HeliControl Kft.",
+      "name2": " HeliControl Kft.",
+      "tax_id": "23321434-2-43",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Archibona Kft.",
+      "name2": "Archibona Kft",
+      "tax_id": "22930338-2-41",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ARCHIBONA Építőipari, Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság ",
+      "name2": "ARCHIBONA Építőipari, Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "22930338241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "MR REISEN Szállítmányozási és Kereskedelmi Korlátolt Felelősségű Társaság",
+      "name2": "MR REISEN Szállítmányozási és Kereskedelmi Korlátolt Felelősségű Nemzeti azonosítószám Társaság",
+      "tax_id": "14732434213",
+      "similarity": 0.87,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PANORÁMA TOURIST Kereskedelmi és Szolgáltató Korlátolt Felelősségü Társaság",
+      "name2": "PANORÁMA TOURIST Kereskedelmi és Szolgáltató Korlátolt Felelősségü Társasá",
+      "tax_id": "10663017216",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "INFINITOURS Kft.",
+      "name2": "INFINITOURS Kft",
+      "tax_id": "13446550211",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Pannon Park Forest Parkfenntartó és Parképítő Korlátolt Felelősségű Társaság|VIANOVA 87 Közmű és Útépítő Zártkörűen Működő Részvénytársaság|Parkfenntartó-Kertészeti és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Pannon Park Forest Parkfenntartó és Parképítő Korlátolt Felelősségű Társaság|VIANOVA 87 Közmű és Útépítő Zártkörűen Működő Részvénytársaság|Parkfenntartó-Kertészeti és Szolgáltató Korlátolt Felelősségű Társaság.",
+      "tax_id": "11630979243|13839129243|12252091241",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Pannon Park Forest Parkfenntartó és Parképítő Korlátolt Felelősségű Társaság|VIANOVA 87 Közmű és Útépítő Zártkörűen Működő Részvénytársaság|Parkfenntartó-Kertészeti és Szolgáltató Korlátolt Felelősségű Társaság",
+      "name2": "Pannon Park Forest Parkfenntartó és Parképítő Kft.|VIANOVA 87 Közmű és Útépítő Zártkörűen Működő Részvénytársaság|Parkfenntartó-Kertészeti és Szolgáltató Korlátolt Felelősségű Társaság",
+      "tax_id": "11630979-2-43|13839129-2-43|12252091-2-41",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Szocio-Gráf Piac- és Közvélemény-kutató Intézet Kft.",
+      "name2": "\"SZOCIOGRÁF\" Piac- és Közvéleménykutató Intézet Kft.",
+      "tax_id": "11543376202",
+      "similarity": 0.875,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "CC Printing Szolgáltató Kft.",
+      "name2": "CC Printing Szolgáltató Kft",
+      "tax_id": "24782526243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "UTIBER Kft.",
+      "name2": "UTIBER Kft",
+      "tax_id": "10554885243",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "SW Umwelttechnik Magyarország Építőelemgyár Korlátolt Felelősségű Társaság|Ferrobeton Dunaújvárosi Beton – és Vasbetonelem-gyártó Zrt.",
+      "name2": "SW Umwelttechnik Magyarország Építőelemgyár Kft.|Ferrobeton Dunaújvárosi Beton – és Vasbetonelem-gyártó Zrt.",
+      "tax_id": "11952107244,HU11952107|11104270207",
+      "similarity": 0.885,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PÖYRY ERŐTERV Energetikai Tervező és Vállalkozó ZRt.",
+      "name2": "AFRY ERŐTERV Energetikai Tervező és Vállalkozó ZRt. ",
+      "tax_id": "10790575243,HU10790575",
+      "similarity": 0.9199999999999999,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Doktor24 Medicina Kft.",
+      "name2": "Doktor24 Medicina Zrt.",
+      "tax_id": "27277210441",
+      "similarity": 0.855,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PETROL Üzemanyagtöltő Állomásokat Tervező, Építő és Javító Kft.",
+      "name2": "PETROL Üzemanyagtöltő Állomásokat Tervező, Építő, Szerelő és Javító Kft.",
+      "tax_id": "10383083241",
+      "similarity": 0.93,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " FORNAX SI Nagyvállalati Megoldások Kft.",
+      "name2": "FORNAX SI Nagyvállalati Megoldások Kft.",
+      "tax_id": " 24278353-2-43",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "AKTIVIT Kft.",
+      "name2": "Aktivit Kft.",
+      "tax_id": "10554964242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ALBA ÚT Építőipari, Kereskedelmi és szolgáltató KFT",
+      "name2": "\"ALBA ÚT\" Építőipari, Kereskedelmi és szolgáltató KFT",
+      "tax_id": "11601849207",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "FÖRCH  Kereskedelmi Korlátolt Felelősségű Társaság ",
+      "name2": "FÖRCH Kereskedelmi Korlátolt Felelősségű Társaság ",
+      "tax_id": "10646270-2-42",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Fazekas Gyula Díszletépítő Kft.,",
+      "name2": "Fazekas Gyula Díszletépítő Kft.",
+      "tax_id": "11683142213",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "BME ITS Közlekedési- és Járműrendszerek Nonprofit Zártkörűen Működő Részvénytársaság|KTI Közlekedéstudományi Intézet Nonprofit Kft.",
+      "name2": "BME ITS Közlekedési- és Járműrendszerek Nonprofit Zártkörűen Működő Részvénytársaság|KTI Közlekedéstudományi Intézet Nonprofit Korlátolt felelősségű társaság",
+      "tax_id": "24790358243,HU24790358|21925221243,HU21925221",
+      "similarity": 0.905,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": " VízTEC Zrt.",
+      "name2": "VízTEC Zrt.",
+      "tax_id": "22975085-2-13 ",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Keyence International Belgium NV/SA",
+      "name2": "Keyence Internation Belgium NV/SA",
+      "tax_id": "DE287410591",
+      "similarity": 0.97,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "GILUX HUNGARY Kft.",
+      "name2": "Gilux Hungary Kft.",
+      "tax_id": "22987392-2-42",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "DHI Hungary Korlátolt Felelőséggű Társaság",
+      "name2": "DHI Hungary Korlátolt Felelőségű Társaság",
+      "tax_id": "14848137241,HU14848137",
+      "similarity": 0.99,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "ATYS-CO Korlátolt Felelősségű Társaság",
+      "name2": "ATYS-CO Korlátolt Felelősségű Társaság ",
+      "tax_id": "12060991242",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft.",
+      "name2": "PFM Holding Zrt.|PFM Biztonsági Szolgáltató Kft.|Hunex Team Kft. ",
+      "tax_id": "25150597243|13608471243|25348655243 ",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    },
+    {
+      "entity_type": "winner",
+      "name1": "Salisbury Régészeti Korlátolt Felelősségű Társaság",
+      "name2": "Salisbury Régészeti Korlátolt Felelősségű Társaság ",
+      "tax_id": "11718873213",
+      "similarity": 1.0,
+      "match_type": "tax_id_and_name"
+    }
+  ],
+  "total_entities": 13011,
+  "merged_entities": 362
+}

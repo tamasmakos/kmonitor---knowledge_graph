@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_5_kiiro_300M_epitesi",
+  "nodes": 416,
+  "edges": 423,
+  "density": 0.0024501853568118627,
+  "avg_clustering": 0.0,
+  "number_of_communities": 5,
+  "avg_betweenness": 0.005998268436063093,
+  "avg_pagerank": 0.002403846153846153,
+  "avg_degree_centrality": 0.0049003707136237255,
+  "avg_closeness_centrality": 0.002450185356811863,
+  "avg_eigenvector_centrality": 0.04801646789762774,
+  "diameter": 6,
+  "avg_shortest_path": 3.4832831325301203,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.15201952256189344
+}

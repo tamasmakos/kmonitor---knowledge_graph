@@ -10,68 +10,86 @@ A projekt fő célja a közbeszerzési hálózatok strukturális elemzése, amel
 - Gyanús mintázatok és anomáliák felderítésében
 - Közbeszerzési piac koncentrációjának mérésében
 
-## Adatforrás
+## Elemzési Kategóriák
 
-Az elemzés az Elektronikus Közbeszerzési Rendszer (EKR) nyilvános adatain alapul. Az adatbázis tartalmazza:
-- Ajánlatkérő szervezetek adatait
-- Nyertes ajánlattevők információit
-- Szerződések részleteit
-- Eljárások típusait és értékeit
-- Minőségi, költség és ár kritériumokat
+1. **Teljes Hálózat Elemzése**
+   - Teljes hálózati struktúra
+   - Kiírói hálózat
+   - Nyertesek hálózata
 
-## Adatfeldolgozási Pipeline
+2. **Top 15 Elemzések** (szerződéstípusonként)
+   - Árubeszerzés
+   - Szolgáltatás megrendelés
+   - Építési beruházás
+   Minden típusnál a top 15 kiíró és nyertes vizsgálata
 
-1. **Adattisztítás** (`cleaning.py`)
-   - Hiányzó értékek kezelése
-   - Csak odaítélt szerződések megtartása
-   - Pénznem szűrése (HUF)
-   - Dátumok feldolgozása
+3. **Értékhatár Alapú Elemzések**
+   - 800M+ építési beruházások
+   - 300M alatti építési beruházások
+   - 900M+ egyajánlatos szerződések
 
-2. **Entitás Feloldás** (`entity_resolution.py`)
-   - Cégnevek és adószámok egyeztetése
-   - Duplikátumok kezelése
+## Hálózati Metrikák
 
-3. **Tudásgráf Építés** (`kg_build.py`)
-   - Kétoldalú gráf létrehozása (ajánlatkérők és nyertesek)
-   - Élek súlyozása szerződési értékekkel
-   - Node attribútumok hozzáadása
+1. **Alapmetrikák**
+   - Csúcsok és élek száma
+   - Hálózati sűrűség
+   - Klaszterezettség
+   - Közösségek száma
 
-4. **Hálózati Jellemzők** (`graph_features.py`)
+2. **Centralitás Mértékek**
+   - Közöttiség centralitás
+   - PageRank
+   - Fokszám centralitás
+   - Közelség centralitás
+   - Sajátvektor centralitás
 
-### Hálózatelemzési Szintek:
-
-#### a) Hálózat Szintű Metrikák
-- Csúcsok és élek száma
-- Hálózati sűrűség
-- Asszortativitás
-
-#### b) Komponens Szintű Jellemzők
-- Átlagos úthossz
-- Átmérő
-- Klikkek száma és mérete
-- K-mag elemzés
-
-#### c) Csúcs Szintű Metrikák
-- Centralitás mértékek (fokszám, közöttiség, közelség)
-- Sajátvektor centralitás és PageRank
-- Klaszterezési együttható
-
-#### d) Beágyazások és Közösségek
-- Node2Vec beágyazások (64 dimenzió)
-- Közösségdetektálás
-- Hasonlósági mértékek
+3. **További Jellemzők**
+   - Hálózati átmérő
+   - Átlagos úthossz
+   - Tranzitivitás
+   - Reciprocitás
+   - Asszortativitás
 
 ## Kimeneti Fájlok
 
-A pipeline három fő statisztikai fájlt generál:
-1. `subnetwork_stats.csv`: Hálózat szintű statisztikák
-2. `subgraph_stats.csv`: Komponens szintű elemzések
-3. `node_stats.csv`: Csúcs szintű metrikák és beágyazások
+1. **Metrika Fájlok**
+   - Gráf szintű metrikák (JSON)
+   - Csúcs szintű metrikák (CSV)
+   - Bővített adathalmazok metrikákkal (CSV)
+   - Centralitás elemzések (CSV)
 
+2. **Vizualizációk**
+   - Típus alapú színezésű hálózatok
+   - Közösség alapú színezésű hálózatok
+   - Interaktív gráf megjelenítések
 
-## Használat
-Terminal
-1, git clone https://github.com/tamasmakos/Kmonitor_EKR_KnowledgeGraph.git
-2, python -m virtual venv
-3, python -m pip install -r requirements.txt
-4, python main.py
+## Telepítés és Használat
+
+1. Projekt klónozása:
+```bash
+git clone https://github.com/tamasmakos/Kmonitor_EKR_KnowledgeGraph.git
+```
+
+2. Virtuális környezet létrehozása, majd aktiválása (rendszerfüggő)
+```bash
+python -m venv virtual
+```
+
+3. Függőségek telepítése:
+```bash
+pip install -r requirements.txt
+```
+
+4. Program futtatása:
+```bash
+python main.py
+```
+
+## Kimeneti Könyvtárszerkezet
+
+```
+output/
+├── data/         # Feldolgozott adatfájlok
+├── exports/      # CSV és JSON kimenetek
+├── graphs/       # Gráf fájlok
+└── visualizations/ # Interaktív vizualizációk

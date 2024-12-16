@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_árubeszerzés_kiiro",
+  "nodes": 840,
+  "edges": 1202,
+  "density": 0.0017055451501220274,
+  "avg_clustering": 0.0,
+  "number_of_communities": 14,
+  "avg_betweenness": 0.003466164144506073,
+  "avg_pagerank": 0.0011904761904761908,
+  "avg_degree_centrality": 0.0034110903002440534,
+  "avg_closeness_centrality": 0.0017055451501220267,
+  "avg_eigenvector_centrality": 0.028511441529277447,
+  "diameter": 6,
+  "avg_shortest_path": 3.9046455530960893,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": 0.09756187879656428
+}

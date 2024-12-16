@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_5_nyertes_900M_egy_ajanlat",
+  "nodes": 195,
+  "edges": 199,
+  "density": 0.005260375363468147,
+  "avg_clustering": 0.002583171098351364,
+  "number_of_communities": 4,
+  "avg_betweenness": 0.008035128520145344,
+  "avg_pagerank": 0.005128205128205124,
+  "avg_degree_centrality": 0.010520750726936293,
+  "avg_closeness_centrality": 0.007176148141964745,
+  "avg_eigenvector_centrality": 0.005235437241772787,
+  "diameter": 6,
+  "avg_shortest_path": 2.5507798043880516,
+  "transitivity": 0.0625,
+  "reciprocity": 0.0,
+  "assortativity": -0.28758467404108295
+}

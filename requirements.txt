@@ -24,3 +24,9 @@ pathlib              # for path handling (part of Python standard library)
 
 # Type Hints
 typing-extensions>=4.0.0  # for advanced type hints
+
+# Fuzzy matching
+fuzzywuzzy>=0.18.0
+
+# Streamlit
+streamlit>=1.20.0

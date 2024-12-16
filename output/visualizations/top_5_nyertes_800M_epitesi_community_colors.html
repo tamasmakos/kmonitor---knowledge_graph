@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #FFFFFF;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#000966", "font": {"color": "black"}, "id": "J\u00f3zsefv\u00e1rosi \u00d6nkorm\u00e1nyzat", "label": "J\u00f3zsefv\u00e1rosi \u00d6nkorm\u00e1nyzat", "shape": "dot", "title": "J\u00f3zsefv\u00e1rosi \u00d6nkorm\u00e1nyzat"}, {"color": "#000966", "font": {"color": "black"}, "id": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 ...", "shape": "dot", "title": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "Orsz\u00e1gos V\u00edz\u00fcgyi F\u0151igazgat\u00f3s\u00e1g", "label": "Orsz\u00e1gos V\u00edz\u00fcgyi F\u0151igazgat\u00f3s\u00e1g", "shape": "dot", "title": "Orsz\u00e1gos V\u00edz\u00fcgyi F\u0151igazgat\u00f3s\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari,...", "shape": "dot", "title": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#000966", "font": {"color": "black"}, "id": "Miskolc Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Miskolc Megyei Jog\u00fa V\u00e1ros \u00d6...", "shape": "dot", "title": "Miskolc Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "\u00c1llatorvostudom\u00e1nyi Egyetem", "label": "\u00c1llatorvostudom\u00e1nyi Egyetem", "shape": "dot", "title": "\u00c1llatorvostudom\u00e1nyi Egyetem"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipar...", "shape": "dot", "title": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Zalaegerszeg Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Zalaegerszeg Megyei Jog\u00fa V\u00e1...", "shape": "dot", "title": "Zalaegerszeg Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en ...", "shape": "dot", "title": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Veszpr\u00e9mi Szakk\u00e9pz\u00e9si Centrum", "label": "Veszpr\u00e9mi Szakk\u00e9pz\u00e9si Centrum", "shape": "dot", "title": "Veszpr\u00e9mi Szakk\u00e9pz\u00e9si Centrum"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "EB Hungary Invest Kft.", "label": "EB Hungary Invest Kft.", "shape": "dot", "title": "EB Hungary Invest Kft."}, {"color": "#000966", "font": {"color": "black"}, "id": "Budapest F\u0151v\u00e1ros IX. ker\u00fclet Ferencv\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Budapest F\u0151v\u00e1ros IX. ker\u00fcle...", "shape": "dot", "title": "Budapest F\u0151v\u00e1ros IX. ker\u00fclet Ferencv\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#000966", "font": {"color": "black"}, "id": "Budapest F\u0151v\u00e1ros XVI. ker\u00fcleti \u00d6nkorm\u00e1nyzat", "label": "Budapest F\u0151v\u00e1ros XVI. ker\u00fcl...", "shape": "dot", "title": "Budapest F\u0151v\u00e1ros XVI. ker\u00fcleti \u00d6nkorm\u00e1nyzat"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Szent M\u00f3r Benc\u00e9s Perjels\u00e9g", "label": "Szent M\u00f3r Benc\u00e9s Perjels\u00e9g", "shape": "dot", "title": "Szent M\u00f3r Benc\u00e9s Perjels\u00e9g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 ...", "shape": "dot", "title": "Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Budapesti M\u0171szaki \u00e9s Gazdas\u00e1gtudom\u00e1nyi Egyetem", "label": "Budapesti M\u0171szaki \u00e9s Gazdas...", "shape": "dot", "title": "Budapesti M\u0171szaki \u00e9s Gazdas\u00e1gtudom\u00e1nyi Egyetem"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "Mahart-Szabadkik\u00f6t\u0151 Zrt.", "label": "Mahart-Szabadkik\u00f6t\u0151 Zrt.", "shape": "dot", "title": "Mahart-Szabadkik\u00f6t\u0151 Zrt."}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "Radioakt\u00edv Hullad\u00e9kokat Kezel\u0151 K\u00f6zhaszn\u00fa Nonprofit Kft.", "label": "Radioakt\u00edv Hullad\u00e9kokat Kez...", "shape": "dot", "title": "Radioakt\u00edv Hullad\u00e9kokat Kezel\u0151 K\u00f6zhaszn\u00fa Nonprofit Kft."}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt.", "label": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fe...", "shape": "dot", "title": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt."}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "Tiszamenti Region\u00e1lis V\u00edzm\u0171...", "shape": "dot", "title": "Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Somogy Megyei Rend\u0151r-f\u0151kapit\u00e1nys\u00e1g", "label": "Somogy Megyei Rend\u0151r-f\u0151kapi...", "shape": "dot", "title": "Somogy Megyei Rend\u0151r-f\u0151kapit\u00e1nys\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|J\u00e1szf\u00e9nyszaru V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|J\u00e1szf\u00e9nyszaru V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NIF Nemzeti Infrastrukt\u00fara Fejleszt\u0151 z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "NIF Nemzeti Infrastrukt\u00fara ...", "shape": "dot", "title": "NIF Nemzeti Infrastrukt\u00fara Fejleszt\u0151 z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Magyar \u00c1llami Operah\u00e1z", "label": "Magyar \u00c1llami Operah\u00e1z", "shape": "dot", "title": "Magyar \u00c1llami Operah\u00e1z"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|DMRV Duna Menti Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 T\u00e1rsas\u00e1g", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|DMRV Duna Menti Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 T\u00e1rsas\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Szak\u00e1ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|P\u00e9tf\u00fcrd\u0151 Nagyk\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Reg\u00f6ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Bik\u00e1cs K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|\u00d6sk\u00fc K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Gy\u00f6rk\u00f6ny K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|Sz\u00e1razd K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Pusztahencse K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|P\u00e1lfa K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Vajta K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Szak\u00e1ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|P\u00e9tf\u00fcrd\u0151 Nagyk\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Reg\u00f6ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Bik\u00e1cs K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|\u00d6sk\u00fc K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Gy\u00f6rk\u00f6ny K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|Sz\u00e1razd K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Pusztahencse K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|P\u00e1lfa K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Vajta K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9RV. \u00c9szakmagyarorsz\u00e1gi Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9RV. \u00c9szakmagyarorsz\u00e1gi Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#3ea3bd", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9szakdun\u00e1nt\u00fali V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9szakdun\u00e1nt\u00fali V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "PIP K\u00f6z\u00e9p-Duna Menti T\u00e9rs\u00e9gfejleszt\u00e9si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "PIP K\u00f6z\u00e9p-Duna Menti T\u00e9rs\u00e9g...", "shape": "dot", "title": "PIP K\u00f6z\u00e9p-Duna Menti T\u00e9rs\u00e9gfejleszt\u00e9si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#000966", "font": {"color": "black"}, "id": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|\u00c1llami Eg\u00e9szs\u00e9g\u00fcgyi Ell\u00e1t\u00f3 K\u00f6zpont", "label": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s...", "shape": "dot", "title": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|\u00c1llami Eg\u00e9szs\u00e9g\u00fcgyi Ell\u00e1t\u00f3 K\u00f6zpont"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Kaposv\u00e1r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Kaposv\u00e1r Megyei Jog\u00fa V\u00e1ros ...", "shape": "dot", "title": "Kaposv\u00e1r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Budapest F\u0151v\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Budapest F\u0151v\u00e1ros \u00d6nkorm\u00e1nyzata", "shape": "dot", "title": "Budapest F\u0151v\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Sz\u00e9chenyi Istv\u00e1n Egyetem", "label": "Sz\u00e9chenyi Istv\u00e1n Egyetem", "shape": "dot", "title": "Sz\u00e9chenyi Istv\u00e1n Egyetem"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Magyar Nemzeti Vagyonkezel\u0151 Z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "Magyar Nemzeti Vagyonkezel\u0151...", "shape": "dot", "title": "Magyar Nemzeti Vagyonkezel\u0151 Z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#000966", "font": {"color": "black"}, "id": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|K\u00f6zbeszerz\u00e9si \u00e9s Ell\u00e1t\u00e1si F\u0151igazgat\u00f3s\u00e1g", "label": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s...", "shape": "dot", "title": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|K\u00f6zbeszerz\u00e9si \u00e9s Ell\u00e1t\u00e1si F\u0151igazgat\u00f3s\u00e1g"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Magyar Turisztikai \u00dcgyn\u00f6ks\u00e9g Zrt.", "label": "Magyar Turisztikai \u00dcgyn\u00f6ks\u00e9...", "shape": "dot", "title": "Magyar Turisztikai \u00dcgyn\u00f6ks\u00e9g Zrt."}, {"color": "#c7191a", "font": {"color": "black"}, "id": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|Sz\u00e9chenyi Istv\u00e1n Egyetem", "label": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s...", "shape": "dot", "title": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|Sz\u00e9chenyi Istv\u00e1n Egyetem"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Szabadt\u00e9ri N\u00e9prajzi M\u00fazeum", "label": "Szabadt\u00e9ri N\u00e9prajzi M\u00fazeum", "shape": "dot", "title": "Szabadt\u00e9ri N\u00e9prajzi M\u00fazeum"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "V\u00e1rosliget Ingatlanfejleszt\u0151 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "V\u00e1rosliget Ingatlanfejleszt...", "shape": "dot", "title": "V\u00e1rosliget Ingatlanfejleszt\u0151 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "S\u00e1rv\u00e1r V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "S\u00e1rv\u00e1r V\u00e1ros \u00d6nkorm\u00e1nyzata", "shape": "dot", "title": "S\u00e1rv\u00e1r V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#000966", "font": {"color": "black"}, "id": "M\u00c1V Magyar \u00c1llamvasutak Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "M\u00c1V Magyar \u00c1llamvasutak Z\u00e1r...", "shape": "dot", "title": "M\u00c1V Magyar \u00c1llamvasutak Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Sopron T\u00e9rs\u00e9gi Hullad\u00e9kgazd\u00e1lkod\u00e1si \u00d6nkorm\u00e1nyzati T\u00e1rsul\u00e1s", "label": "NFP Nemzeti Fejleszt\u00e9si Pro...", "shape": "dot", "title": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Sopron T\u00e9rs\u00e9gi Hullad\u00e9kgazd\u00e1lkod\u00e1si \u00d6nkorm\u00e1nyzati T\u00e1rsul\u00e1s"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Citadella Vagyonkezel\u0151 Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "Citadella Vagyonkezel\u0151 Nonp...", "shape": "dot", "title": "Citadella Vagyonkezel\u0151 Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|E\u00f6tv\u00f6s Lor\u00e1nd Tudom\u00e1nyegyetem", "label": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s...", "shape": "dot", "title": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|E\u00f6tv\u00f6s Lor\u00e1nd Tudom\u00e1nyegyetem"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Opera Vagyonkezel\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "Opera Vagyonkezel\u0151 Korl\u00e1tol...", "shape": "dot", "title": "Opera Vagyonkezel\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Testnevel\u00e9si Egyetem", "label": "Testnevel\u00e9si Egyetem", "shape": "dot", "title": "Testnevel\u00e9si Egyetem"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "V\u00e1rpalota V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "V\u00e1rpalota V\u00e1ros \u00d6nkorm\u00e1nyzata", "shape": "dot", "title": "V\u00e1rpalota V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Paks II. Atomer\u0151m\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "Paks II. Atomer\u0151m\u0171 Z\u00e1rtk\u00f6r\u0171...", "shape": "dot", "title": "Paks II. Atomer\u0151m\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "OTP Bank Nyrt.", "label": "OTP Bank Nyrt.", "shape": "dot", "title": "OTP Bank Nyrt."}, {"color": "#000966", "font": {"color": "black"}, "id": "J\u00f3zsefv\u00e1rosi Gazd\u00e1lkod\u00e1si K\u00f6zpont Zrt.", "label": "J\u00f3zsefv\u00e1rosi Gazd\u00e1lkod\u00e1si K...", "shape": "dot", "title": "J\u00f3zsefv\u00e1rosi Gazd\u00e1lkod\u00e1si K\u00f6zpont Zrt."}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Nagykanizsai V\u00e1rosfejleszt\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "Nagykanizsai V\u00e1rosfejleszt\u0151...", "shape": "dot", "title": "Nagykanizsai V\u00e1rosfejleszt\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "BDJK-Real Estate Ingatlanhasznos\u00edt\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "BDJK-Real Estate Ingatlanha...", "shape": "dot", "title": "BDJK-Real Estate Ingatlanhasznos\u00edt\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "K\u00e9szenl\u00e9ti Rend\u0151rs\u00e9g", "label": "K\u00e9szenl\u00e9ti Rend\u0151rs\u00e9g", "shape": "dot", "title": "K\u00e9szenl\u00e9ti Rend\u0151rs\u00e9g"}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "F\u0151v\u00e1rosi K\u00f6zter\u00fclet-fenntart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 Nonprofit R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "label": "F\u0151v\u00e1rosi K\u00f6zter\u00fclet-fenntar...", "shape": "dot", "title": "F\u0151v\u00e1rosi K\u00f6zter\u00fclet-fenntart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 Nonprofit R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Nemzeti Sportk\u00f6zpontok", "label": "Nemzeti Sportk\u00f6zpontok", "shape": "dot", "title": "Nemzeti Sportk\u00f6zpontok"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "STKH Sopron \u00e9s T\u00e9rs\u00e9ge K\u00f6rnyezetv\u00e9delmi \u00e9s Hullad\u00e9kgazd\u00e1lkod\u00e1si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "label": "STKH Sopron \u00e9s T\u00e9rs\u00e9ge K\u00f6rn...", "shape": "dot", "title": "STKH Sopron \u00e9s T\u00e9rs\u00e9ge K\u00f6rnyezetv\u00e9delmi \u00e9s Hullad\u00e9kgazd\u00e1lkod\u00e1si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g"}, {"color": "#000966", "font": {"color": "black"}, "id": "Budapest F\u0151v\u00e1ros XI. Ker\u00fclet \u00dajbuda \u00d6nkorm\u00e1nyzata", "label": "Budapest F\u0151v\u00e1ros XI. Ker\u00fcle...", "shape": "dot", "title": "Budapest F\u0151v\u00e1ros XI. Ker\u00fclet \u00dajbuda \u00d6nkorm\u00e1nyzata"}, {"color": "#000966", "font": {"color": "black"}, "id": "Budakeszi V\u00e1ros \u00d6nkorm\u00e1nyzat", "label": "Budakeszi V\u00e1ros \u00d6nkorm\u00e1nyzat", "shape": "dot", "title": "Budakeszi V\u00e1ros \u00d6nkorm\u00e1nyzat"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Gy\u0151r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "label": "Gy\u0151r Megyei Jog\u00fa V\u00e1ros \u00d6nko...", "shape": "dot", "title": "Gy\u0151r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "Nemzeti K\u00f6zszolg\u00e1lati Egyetem", "label": "Nemzeti K\u00f6zszolg\u00e1lati Egyetem", "shape": "dot", "title": "Nemzeti K\u00f6zszolg\u00e1lati Egyetem"}, {"color": "#c0e2d8", "font": {"color": "black"}, "id": "\u00dajpesti Torna Egylet", "label": "\u00dajpesti Torna Egylet", "shape": "dot", "title": "\u00dajpesti Torna Egylet"}, {"color": "#000966", "font": {"color": "black"}, "id": "Ter\u00e9zv\u00e1rosi Vagyonkezel\u0151 Nonprofit Zrt.", "label": "Ter\u00e9zv\u00e1rosi Vagyonkezel\u0151 No...", "shape": "dot", "title": "Ter\u00e9zv\u00e1rosi Vagyonkezel\u0151 Nonprofit Zrt."}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Budapest F\u0151v\u00e1ros Vagyonkezel\u0151 K\u00f6zpont Zrt.", "label": "Budapest F\u0151v\u00e1ros Vagyonkeze...", "shape": "dot", "title": "Budapest F\u0151v\u00e1ros Vagyonkezel\u0151 K\u00f6zpont Zrt."}, {"color": "#d09ccc", "font": {"color": "black"}, "id": "Telki K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata", "label": "Telki K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata", "shape": "dot", "title": "Telki K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata"}, {"color": "#c7191a", "font": {"color": "black"}, "id": "Gy\u0151ri Evang\u00e9likus Egyh\u00e1zk\u00f6zs\u00e9g", "label": "Gy\u0151ri Evang\u00e9likus Egyh\u00e1zk\u00f6zs\u00e9g", "shape": "dot", "title": "Gy\u0151ri Evang\u00e9likus Egyh\u00e1zk\u00f6zs\u00e9g"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#FF0000", "from": "J\u00f3zsefv\u00e1rosi \u00d6nkorm\u00e1nyzat", "title": "Contract value: 1,082,677,165 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Orsz\u00e1gos V\u00edz\u00fcgyi F\u0151igazgat\u00f3s\u00e1g", "title": "Contract value: 1,447,538,910 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#A0A0A0", "from": "Miskolc Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 63,800,000 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 1.638}, {"arrows": "to", "color": "#FF0000", "from": "\u00c1llatorvostudom\u00e1nyi Egyetem", "title": "Contract value: 5,193,464,651 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Zalaegerszeg Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 5,483,913,110 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Veszpr\u00e9mi Szakk\u00e9pz\u00e9si Centrum", "title": "Contract value: 2,431,978,805 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Budapest F\u0151v\u00e1ros IX. ker\u00fclet Ferencv\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 1,236,621,136 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Budapest F\u0151v\u00e1ros XVI. ker\u00fcleti \u00d6nkorm\u00e1nyzat", "title": "Contract value: 2,859,950,025 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Szent M\u00f3r Benc\u00e9s Perjels\u00e9g", "title": "Contract value: 2,375,509,283 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 4,910,500,000 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Budapesti M\u0171szaki \u00e9s Gazdas\u00e1gtudom\u00e1nyi Egyetem", "title": "Contract value: 395,116,428 HUF", "to": "EB Hungary Invest Kft.", "width": 4.95116428}, {"arrows": "to", "color": "#FF0000", "from": "Mahart-Szabadkik\u00f6t\u0151 Zrt.", "title": "Contract value: 9,387,372,130 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Radioakt\u00edv Hullad\u00e9kokat Kezel\u0151 K\u00f6zhaszn\u00fa Nonprofit Kft.", "title": "Contract value: 336,464,193 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 4.3646419299999994}, {"arrows": "to", "color": "#FFA500", "from": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt.", "title": "Contract value: 439,834,693 HUF", "to": "EB Hungary Invest Kft.", "width": 5.39834693}, {"arrows": "to", "color": "#FF0000", "from": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt.", "title": "Contract value: 8,102,599,910 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt.", "title": "Contract value: 27,405,497,842 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "BMSK Beruh\u00e1z\u00e1si, M\u0171szaki Fejleszt\u00e9si, Sport\u00fczemeltet\u00e9si \u00e9s K\u00f6zbeszerz\u00e9si Zrt.", "title": "Contract value: 4,599,459,239 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 1,403,850,000 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Somogy Megyei Rend\u0151r-f\u0151kapit\u00e1nys\u00e1g", "title": "Contract value: 618,024,155 HUF", "to": "EB Hungary Invest Kft.", "width": 7.18024155}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|J\u00e1szf\u00e9nyszaru V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 2,495,550,080 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Dun\u00e1nt\u00fali Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 19,796,063,360 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NIF Nemzeti Infrastrukt\u00fara Fejleszt\u0151 z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 4,398,183,469 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Magyar \u00c1llami Operah\u00e1z", "title": "Contract value: 999,932,890 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|DMRV Duna Menti Region\u00e1lis V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 T\u00e1rsas\u00e1g", "title": "Contract value: 15,725,960,152 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Tiszamenti Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 16,212,464,350 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Szak\u00e1ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|P\u00e9tf\u00fcrd\u0151 Nagyk\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Reg\u00f6ly K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Bik\u00e1cs K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|\u00d6sk\u00fc K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Gy\u00f6rk\u00f6ny K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|Sz\u00e1razd K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Pusztahencse K\u00f6zs\u00e9gi \u00d6nkorm\u00e1nyzat|P\u00e1lfa K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata|Vajta K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata", "title": "Contract value: 17,049,981,000 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9RV. \u00c9szakmagyarorsz\u00e1gi Region\u00e1lis V\u00edzm\u0171vek Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 12,932,500,000 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|\u00c9szakdun\u00e1nt\u00fali V\u00edzm\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 12,605,000,000 HUF", "to": "M\u00e9sz\u00e1ros \u00e9s M\u00e9sz\u00e1ros Ipari, Kereskedelmi \u00e9s Szolg\u00e1ltat\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "PIP K\u00f6z\u00e9p-Duna Menti T\u00e9rs\u00e9gfejleszt\u00e9si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 2,706,769,243 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|\u00c1llami Eg\u00e9szs\u00e9g\u00fcgyi Ell\u00e1t\u00f3 K\u00f6zpont", "title": "Contract value: 2,092,450,844 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Kaposv\u00e1r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 12,964,597,056 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Budapest F\u0151v\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 1,367,316,496 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Sz\u00e9chenyi Istv\u00e1n Egyetem", "title": "Contract value: 697,307,825 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 7.97307825}, {"arrows": "to", "color": "#A0A0A0", "from": "Sz\u00e9chenyi Istv\u00e1n Egyetem", "title": "Contract value: 99,963,028 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 1.9996302799999999}, {"arrows": "to", "color": "#FFA500", "from": "Magyar Nemzeti Vagyonkezel\u0151 Z\u00e1rtk\u00f6r\u0171en m\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 289,730,811 HUF", "to": "EB Hungary Invest Kft.", "width": 3.89730811}, {"arrows": "to", "color": "#FFA500", "from": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|K\u00f6zbeszerz\u00e9si \u00e9s Ell\u00e1t\u00e1si F\u0151igazgat\u00f3s\u00e1g", "title": "Contract value: 889,490,000 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 9.8949}, {"arrows": "to", "color": "#FFA500", "from": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|K\u00f6zbeszerz\u00e9si \u00e9s Ell\u00e1t\u00e1si F\u0151igazgat\u00f3s\u00e1g", "title": "Contract value: 971,621,085 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Magyar Turisztikai \u00dcgyn\u00f6ks\u00e9g Zrt.", "title": "Contract value: 2,586,833,381 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|Sz\u00e9chenyi Istv\u00e1n Egyetem", "title": "Contract value: 301,499,919 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 4.01499919}, {"arrows": "to", "color": "#A0A0A0", "from": "Szabadt\u00e9ri N\u00e9prajzi M\u00fazeum", "title": "Contract value: 29,774,066 HUF", "to": "EB Hungary Invest Kft.", "width": 1.29774066}, {"arrows": "to", "color": "#FF0000", "from": "V\u00e1rosliget Ingatlanfejleszt\u0151 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 2,198,531,640 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "V\u00e1rosliget Ingatlanfejleszt\u0151 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 147,699,794 HUF", "to": "EB Hungary Invest Kft.", "width": 2.47699794}, {"arrows": "to", "color": "#FFA500", "from": "S\u00e1rv\u00e1r V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 137,251,022 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 2.3725102199999997}, {"arrows": "to", "color": "#FFA500", "from": "M\u00c1V Magyar \u00c1llamvasutak Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 600,000,000 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 7.0}, {"arrows": "to", "color": "#FFA500", "from": "NFP Nemzeti Fejleszt\u00e9si Programiroda Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g|Sopron T\u00e9rs\u00e9gi Hullad\u00e9kgazd\u00e1lkod\u00e1si \u00d6nkorm\u00e1nyzati T\u00e1rsul\u00e1s", "title": "Contract value: 629,675,225 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 7.29675225}, {"arrows": "to", "color": "#FFA500", "from": "Citadella Vagyonkezel\u0151 Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 251,967,046 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 3.51967046}, {"arrows": "to", "color": "#FF0000", "from": "NFSI Nemzeti Fejleszt\u00e9si \u00e9s Strat\u00e9giai Int\u00e9zet Nonprofit Kft.|E\u00f6tv\u00f6s Lor\u00e1nd Tudom\u00e1nyegyetem", "title": "Contract value: 1,079,240,749 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "Opera Vagyonkezel\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 298,689,823 HUF", "to": "EB Hungary Invest Kft.", "width": 3.98689823}, {"arrows": "to", "color": "#FF0000", "from": "Testnevel\u00e9si Egyetem", "title": "Contract value: 18,048,960,126 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "V\u00e1rpalota V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 1,071,687,502 HUF", "to": "EB Hungary Invest Kft.", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Paks II. Atomer\u0151m\u0171 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 2,679,227,814 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "OTP Bank Nyrt.", "title": "Contract value: 335,666,146 HUF", "to": "EB Hungary Invest Kft.", "width": 4.35666146}, {"arrows": "to", "color": "#FF0000", "from": "J\u00f3zsefv\u00e1rosi Gazd\u00e1lkod\u00e1si K\u00f6zpont Zrt.", "title": "Contract value: 1,181,102,362 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Nagykanizsai V\u00e1rosfejleszt\u0151 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 10,629,630,334 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "BDJK-Real Estate Ingatlanhasznos\u00edt\u00f3 \u00e9s Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 3,089,315,776 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "K\u00e9szenl\u00e9ti Rend\u0151rs\u00e9g", "title": "Contract value: 192,257,258 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 2.9225725799999998}, {"arrows": "to", "color": "#FFA500", "from": "F\u0151v\u00e1rosi K\u00f6zter\u00fclet-fenntart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 Nonprofit R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "title": "Contract value: 195,193,000 HUF", "to": "EB Hungary Invest Kft.", "width": 2.95193}, {"arrows": "to", "color": "#FF0000", "from": "Nemzeti Sportk\u00f6zpontok", "title": "Contract value: 5,907,023,066 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FFA500", "from": "STKH Sopron \u00e9s T\u00e9rs\u00e9ge K\u00f6rnyezetv\u00e9delmi \u00e9s Hullad\u00e9kgazd\u00e1lkod\u00e1si Nonprofit Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "title": "Contract value: 108,934,000 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 2.08934}, {"arrows": "to", "color": "#FF0000", "from": "Budapest F\u0151v\u00e1ros XI. Ker\u00fclet \u00dajbuda \u00d6nkorm\u00e1nyzata", "title": "Contract value: 2,487,990,000 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#A0A0A0", "from": "Budakeszi V\u00e1ros \u00d6nkorm\u00e1nyzat", "title": "Contract value: 90,549,674 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 1.90549674}, {"arrows": "to", "color": "#FF0000", "from": "Gy\u0151r Megyei Jog\u00fa V\u00e1ros \u00d6nkorm\u00e1nyzata", "title": "Contract value: 2,295,100,731 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Nemzeti K\u00f6zszolg\u00e1lati Egyetem", "title": "Contract value: 3,497,057,599 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "\u00dajpesti Torna Egylet", "title": "Contract value: 4,689,238,409 HUF", "to": "Z\u00c1\u00c9V \u00c9p\u00edt\u0151ipari Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#FF0000", "from": "Ter\u00e9zv\u00e1rosi Vagyonkezel\u0151 Nonprofit Zrt.", "title": "Contract value: 1,141,995,000 HUF", "to": "\u00c9p\u00edt\u0151-\u00e9s \u00e9p\u00fcletkarbantart\u00f3 Z\u00e1rtk\u00f6r\u0171en M\u0171k\u00f6d\u0151 R\u00e9szv\u00e9nyt\u00e1rsas\u00e1g", "width": 10}, {"arrows": "to", "color": "#A0A0A0", "from": "Budapest F\u0151v\u00e1ros Vagyonkezel\u0151 K\u00f6zpont Zrt.", "title": "Contract value: 32,332,360 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 1.3233236}, {"arrows": "to", "color": "#FFA500", "from": "Telki K\u00f6zs\u00e9g \u00d6nkorm\u00e1nyzata", "title": "Contract value: 182,650,001 HUF", "to": "EB Hungary Invest Kft.", "width": 2.82650001}, {"arrows": "to", "color": "#A0A0A0", "from": "Gy\u0151ri Evang\u00e9likus Egyh\u00e1zk\u00f6zs\u00e9g", "title": "Contract value: 25,980,012 HUF", "to": "WEST HUNG\u00c1RIA BAU \u00c9p\u00edt\u0151ipari Szolg\u00e1ltat\u00f3 Korl\u00e1tolt Felel\u0151ss\u00e9g\u0171 T\u00e1rsas\u00e1g", "width": 1.25980012}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"font": {"size": 14, "face": "arial"}, "shape": "dot", "size": 20}, "edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "color": {"inherit": false}, "smooth": {"type": "continuous"}}, "physics": {"barnesHut": {"gravitationalConstant": -2000, "centralGravity": 0.3, "springLength": 200, "springConstant": 0.05, "damping": 0.09}, "minVelocity": 0.75}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

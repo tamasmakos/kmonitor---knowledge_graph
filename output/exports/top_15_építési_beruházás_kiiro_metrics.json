@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_építési_beruházás_kiiro",
+  "nodes": 504,
+  "edges": 576,
+  "density": 0.002272081794944618,
+  "avg_clustering": 0.0,
+  "number_of_communities": 14,
+  "avg_betweenness": 0.006614662873326035,
+  "avg_pagerank": 0.0019841269841269836,
+  "avg_degree_centrality": 0.004544163589889237,
+  "avg_closeness_centrality": 0.002272081794944618,
+  "avg_eigenvector_centrality": 0.03931209275459223,
+  "diameter": 8,
+  "avg_shortest_path": 4.320560762409669,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.05635366322448438
+}

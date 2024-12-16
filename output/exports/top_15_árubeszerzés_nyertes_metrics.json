@@ -1,0 +1,18 @@
+{
+  "analysis_type": "output/exports/top_15_árubeszerzés_nyertes",
+  "nodes": 743,
+  "edges": 1051,
+  "density": 0.0019063822994852223,
+  "avg_clustering": 0.0,
+  "number_of_communities": 13,
+  "avg_betweenness": 0.003586727906796978,
+  "avg_pagerank": 0.001345895020188425,
+  "avg_degree_centrality": 0.0038127645989704446,
+  "avg_closeness_centrality": 0.0019063822994852223,
+  "avg_eigenvector_centrality": 0.0045480467983767415,
+  "diameter": 6,
+  "avg_shortest_path": 3.6577653789365616,
+  "transitivity": 0,
+  "reciprocity": 0.0,
+  "assortativity": -0.004867728830219934
+}

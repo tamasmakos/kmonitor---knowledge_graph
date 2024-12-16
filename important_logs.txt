@@ -1,0 +1,8 @@
+2024-12-16 21:38:53 - INFO - Initial data shape: (92374, 45)
+2024-12-16 21:38:55 - INFO - Filtered for awarded contracts: 72412 rows
+2024-12-16 21:38:55 - INFO - Filtered out EUR contracts: 70400 rows remaining
+2024-12-16 21:38:55 - INFO - Cleaning completed. Final shape: (70400, 47)
+2024-12-16 21:38:58 - INFO - Final cleaned data shape: (70400, 47)
+2024-12-16 21:39:11 - INFO - Entity resolution complete. Merged 362 entities.
+2024-12-16 21:39:23 - INFO - Found 9433 EKR IDs with inconsistent values
+2024-12-16 21:39:23 - INFO - After removing inconsistent values: (24709, 49)

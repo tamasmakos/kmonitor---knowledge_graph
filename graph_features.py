@@ -269,7 +269,9 @@ def calculate_embedding_statistics(embedding_data: Dict[str, Any], G: nx.Graph) 
         futures = {
             'Betweenness_Centrality': executor.submit(nx.betweenness_centrality, simple_G),
             'Eigenvector_Centrality': executor.submit(nx.eigenvector_centrality, simple_G, max_iter=100),
-            'PageRank': executor.submit(nx.pagerank, simple_G)
+            'PageRank': executor.submit(nx.pagerank, simple_G),
+            'Degree_Centrality': executor.submit(nx.degree_centrality, simple_G),
+            'Closeness_Centrality': executor.submit(nx.closeness_centrality, simple_G)
         }
         
         for metric, future in futures.items():
